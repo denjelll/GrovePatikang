@@ -198,7 +198,7 @@ We extend our gratitude to the following contributors and partners:
 - **Visuals**: Maitriana, Luna Ardhagia Widodo
 - **Social Media**: Cindy Celia Jennifer, Kezia Margaretha Chandra
 - **Developers**:
-  - Fullstack: Jeremy Ansellino Gunawan, Benediktus Denzel Galgani Lumenon
+  - Fullstack: Benediktus Denzel Galgani Lumenon
   - Frontend: Aldo Juan Edrick Jolin, Ivan Reynardo
   - Backend: Edward
 - **Videography**: Evelyn Valencia

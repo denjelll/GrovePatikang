@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use App\User;
-use App\categories;
-use App\articles;
+use App\Models\Categories;
+use App\Models\Articles;
+use App\Models\User;
 use Redirect;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -32,8 +32,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jumlahArtikel = Articles::count(); // Sesuaikan jika nama model bukan 'articles'
+
+        return view('home', compact('jumlahArtikel'));
     }
+
 
     public function profile(){
         $user = Auth::user();
@@ -70,39 +73,41 @@ class HomeController extends Controller
     public function createblog(){
         $user = Auth::user();
         $category = categories::all();
-        return view("createblog",['user'=>$user,'category'=>$category]);
+        return view("auth.admin.createblog",['user'=>$user,'category'=>$category]);
     }
-    public function createdblog(Request $request){
+    public function createdblog(Request $request)
+    {
         Validator::make($request->all(), [
-            'title'   => 'required|unique:articles',
-            'textarea' => 'required',
-            'image'        => 'required',
+            'title'      => 'required|unique:articles',
+            'textarea'   => 'required',
+            'tags'       => 'required',
+            'image'      => 'required|mimes:jpg,jpeg,png|max:2048',
         ])->validate();
+    
+        $imageName = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name = $request->file('image')->getClientOriginalName();
-            $destinationPath = public_path('assets/images');
-            $imagePath = $destinationPath. "/".  $name;
-            $image->move($destinationPath, $name);
-          }
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('assets/images'), $imageName);
+        }
+    
         $user = Auth::user();
-          $articles = new articles;
-          $articles->user_id = $user->id;
-          $articles->category_id = $request->myselect+1;
-          $articles->title = $request->title;
-          $articles->description = $request->textarea;
-          $articles->image = $name;
-          $articles->tags = $request->tags;
-          $articles->lowprice = $request->lowprice;
-          $articles->highprice = $request->highprice;
-          $articles->penjelasan = $request->penjelasan;
-          $articles->ukuran = $request->ukuran;
-          $articles->save();
-
-          $user = Auth::user();
-          $articles = articles::with('User')->where('user_id',$user->id)->get();
-          return view('blog',['articles'=>$articles]);
+        $article = new Articles();
+        $article->user_id = $user->id;
+        $article->category_id = $request->myselect; // tidak perlu +1
+        $article->title = $request->title;
+        $article->description = $request->textarea;
+        $article->image = $imageName;
+        $article->tags = $request->tags;
+        $article->lowprice = $request->lowprice;
+        $article->highprice = $request->highprice;
+        $article->penjelasan = $request->penjelasan;
+        $article->ukuran = $request->ukuran;
+        $article->save();
+    
+        return redirect()->route('blog')->with('message', 'Blog created successfully!');
     }
+    
     public function deleteblog($id){
         $articles = articles::where('id',$id)->first();
         $articles->delete();
