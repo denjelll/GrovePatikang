@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class articles extends Model
+class Articles extends Model
 {
     public function User(){
         return $this->belongsTo(User::class,'user_id');
@@ -13,3 +13,4 @@ class articles extends Model
         return $this->belongsTo(categories::class,'category_id');
     }
 }
+

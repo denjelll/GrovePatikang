@@ -1,29 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
 <style>
-    body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-    }
-
-    main {
-        flex: 1;
-    }
-
-    .py-4 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 95.3%;
-    }
-
-    .card {
-        margin-top: 70px;
+    .card{
+        margin-top: 100px;
     }
 </style>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

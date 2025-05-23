@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @auth
-@if (Auth::user()->role=="member")
+@if (Auth::user()->role=="admin")
 @section('content')
 <style>
 #additionalFields .col-md-4 {

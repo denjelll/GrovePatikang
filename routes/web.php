@@ -32,11 +32,11 @@ Route::get('/informationpost','HomeController@informationpost')->name('informati
 Route::get('/informationuser/{id}','HomeController@informationuser')->name('informationuser');
 
 
-Route::get('/aboutus','welcome@aboutus')->name('aboutus');
-Route::get('/category/{id}','welcome@category')->name('category');
-Route::get('/post/{id}','welcome@post')->name('post');
-Route::get('/contactus', 'welcome@contactus')->name('contactus');
-Route::get('/csr','welcome@csr')->name('csr');
-Route::get('/researchdedication','welcome@researchdedication')->name('researchdedication');
-Route::get('/', 'welcome@indexshow')->name('homeshow');
-Route::get('/testing', 'welcome@testing')->name('testing');
+Route::get('/aboutus','WelcomeController@aboutus')->name('aboutus');
+Route::get('/category/{id}','WelcomeController@category')->name('category');
+Route::get('/post/{id}','WelcomeController@post')->name('post');
+Route::get('/contactus', 'WelcomeController@contactus')->name('contactus');
+Route::get('/csr','WelcomeController@csr')->name('csr');
+Route::get('/researchdedication','WelcomeController@researchdedication')->name('researchdedication');
+Route::get('/', 'WelcomeController@indexshow')->name('homeshow');
+Route::get('/testing', 'WelcomeController@testing')->name('testing');

@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\User;
-use App\categories;
-use App\articles;
+use App\Models\User;
+use App\Models\Categories;
+use App\Models\Articles;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class welcome extends Controller
+class WelcomeController extends Controller
 {
     public function indexshow(){
         $post = articles::where('Category_id',2)->get();

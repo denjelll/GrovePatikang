@@ -2,24 +2,17 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                {{-- <div class="card-header">{{ __('Dashboard') }}</div> --}}
+    <h2>Selamat datang, {{ Auth::user()->name }}!</h2>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    @auth
-                    Welcome  {{ Auth::user()->name }}
-                        
-                    @endauth
-                </div>
-            </div>
+    <div class="card mt-4">
+        <div class="card-header">Statistik</div>
+        <div class="card-body">
+            <ul>
+                <li>Jumlah Artikel: <strong>{{ $jumlahArtikel }}</strong></li>
+            </ul>
         </div>
     </div>
+
+    <a href="{{ route('createblog') }}" class="btn btn-primary mt-4">Tambah Blog Baru</a>
 </div>
 @endsection
