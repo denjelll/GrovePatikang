@@ -34,8 +34,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ URL::to('/assets/images/logo-website.png') }}" alt="Logo" class="logo">
+                <a class="navbar-brand" href="{{ url('/') }}" style= "margin-left: -70px;">
+                    <img src="{{ URL::to('/assets/images/logo-website.png') }}" alt="Logo" style="height: 100px; widht: auto;" class="logo">
                   </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -43,42 +43,33 @@
                         <a class="nav-link" href="{{ url('/') }}">
                             Home
                         </a>
-@auth
-@if (auth()->user()->role=="admin")
-<a class="nav-link" href="{{ url('/informationpost') }}">
-    Admin
-</a>
-<a class="nav-link" href="{{ url('/edituser') }}">
-    User
-</a>
-@else
-<a class="nav-link" href="{{url('/editprofile')}}">
-    Profil
-</a>
-<a class="nav-link" href="{{ url('/blog') }}">
-    Blog
-</a>
-@endif
-@endauth
-@guest
+                        @auth
+                        @if (auth()->user()->role=="admin")
+                        <a class="nav-link" href="{{ url('/informationpost') }}">
+                            Admin
+                        </a>
+                        @else
+                        <a class="nav-link" href="{{url('/editprofile')}}">
+                            Profil
+                        </a>
+                        <a class="nav-link" href="{{ url('/blog') }}">
+                            Blog
+                        </a>
+                        @endif
+                        @endauth
+                        @guest
                         <a class="nav-link" href="{{ url('/aboutus') }}">
                             About us
                         </a>
                         <a class="nav-link" href="{{ url('/contactus') }}">
                             Contact us
                         </a>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Category</a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="/category/1">Product and Tour</a>
-                              <a class="dropdown-item" href="/category/2">News and Blog</a>
-                              <a class="dropdown-item" href="{{ url('/csr') }}">CSR Program</a>
-                              <a class="dropdown-item" href="{{ url('/researchdedication') }}">Research and Dedication</a>
-                              <a class="dropdown-item" href="/category/3">Update Website</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="/category/5">Others</a>
-                            </div>
-                          </li>
+                        <a class="nav-link" href="/category/1">Product and Tour</a>
+                        <a class="nav-link" href="/category/2">News and Blog</a>
+                        <a class="nav-link" href="{{ url('/csr') }}">CSR Program</a>
+                        <a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a>
+                </div>
+                    </li>
                         @endguest
                     </ul>
 
@@ -86,9 +77,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                            </li> -->
 
                         @else
                             <li class="nav-item dropdown">

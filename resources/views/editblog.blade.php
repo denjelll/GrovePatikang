@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@auth
-@if (Auth::user()->role=="member")
+<!-- @auth
+@if (Auth::user()->role=="member") -->
 @section('content')
 <style>
     #additionalFields .col-md-4 {
@@ -152,5 +152,5 @@
     });
 </script>
 @endsection
-@endif
-@endauth
+<!-- @endif
+@endauth -->

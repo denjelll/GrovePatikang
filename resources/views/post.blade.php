@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-{{-- @auth
-@if (Auth::user()->role=="member")  --}}
+<!-- {{-- @auth
+@if (Auth::user()->role=="member")  --}} -->
 @section('content')
 
 @if($post->category_id == 1)
@@ -346,5 +346,5 @@
 
 @endif
 @endsection
-{{-- @endif
-@endauth --}}
+<!-- {{-- @endif
+@endauth --}} -->

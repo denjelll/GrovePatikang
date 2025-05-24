@@ -1,6 +1,4 @@
 @extends('layouts.app')
-{{-- @auth
-@if (Auth::user()->role=="member") --}}
 @section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -368,5 +366,3 @@ body, html {
 </body>
 </html>
 @endsection
-{{-- @endif
-@endauth --}}
