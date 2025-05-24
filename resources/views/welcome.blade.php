@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-{{-- @auth
-@if (Auth::user()->role=="member")   --}}
+<!-- {{-- @auth
+@if (Auth::user()->role=="member")   --}} -->
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,8 @@
       }
 
       .logo {
-        height: 60px;
+        height: 100px;
+        width: auto;
       }
 
       .navbar-nav .nav-link {
@@ -107,7 +108,7 @@
       /* Hero Section */
       .hero-section {
         background: url('images/mangrove-background.jpg') no-repeat center center/cover;
-        height: 88vh;
+        height: 82vh;
         /* Full screen height */
         display: flex;
         align-items: center;
@@ -116,12 +117,40 @@
         margin-bottom: -30px;
       }
 
+      .login-btn {
+        background-color: #a65325;
+        color: white;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        position: absolute;
+        top: -230px;
+        right: -520px;
+        z-index: 10;
+      }
+
+      .login-btn:hover {
+        background-color: #883e1a;
+        color: white;
+        text-decoration: none;
+      }
+
       .hero-section h1 {
         font-size: 3rem;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 10px;
       }
+
+
+      .hero-overlay {
+        position: relative;
+      }
+
+
 
       .subtitle {
         font-size: 1.5rem;
@@ -547,7 +576,10 @@
             <div class="container text-center text-white">
                 <h1>Welcome To Patikang</h1>
                 <p class="subtitle">Lembur Mangrove, Desa Wisata Citeureup</p>
-                <a href="#" class="btn btn-primary">Look Out!</a>
+                @guest
+                  <a href="{{ route('login') }}" class="btn login-btn">Login</a>
+                @endguest 
+                <a href="" class="btn btn-primary">Look Out!</a>
                 <div class="social-icons mt-4">
                     <a href="https://www.instagram.com/lembur_mangrove_patikang" class="social-icon"><i class="bi bi-instagram"></i></a>
                     <a href="https://wa.me/+62817849463" class="social-icon"><i class="bi bi-whatsapp"></i></a>
@@ -760,5 +792,5 @@
 </html>
 
 @endsection
-{{-- @endif
-@endauth --}}
+<!-- {{-- @endif
+@endauth --}} -->

@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@auth
-@if (Auth::user()->role=="member")  
+@extends('layouts.app') 
 @section('content')
 
 <div class="container">
@@ -39,5 +36,3 @@
 </div>
 </div>
 @endsection
-@endif
-@endauth

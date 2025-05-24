@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@auth
-@if (Auth::user()->role=="member")
+<!-- @auth
+@if (Auth::user()->role=="member") -->
 @section('content')
 {{-- MULAI DARI SINI --}}
 <div class="card-body">
@@ -62,5 +62,5 @@
 </div>
 {{-- SELESAI DI SINI --}}
 @endsection
-@endif
-@endauth
+<!-- @endif
+@endauth -->
