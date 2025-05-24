@@ -4,99 +4,63 @@
     <meta charset="UTF-8">
     <title>Login - Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
 
+    <!-- Bootstrap 4 CSS & Icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
         body {
             background-image: url("{{ asset('assets/images/image1.jpg') }}");
             background-size: cover;
             background-position: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .main-content {
             flex: 1;
         }
 
-        /* Navbar */
-        .custom-navbar {
+        .navbar {
             background-color: #f8f8e1;
-            padding: 10px 0;
         }
 
-        .navbar-content {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            max-width: 1300px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 40px;
+        .navbar .nav-link {
+            color: #1f3a1f;
+            font-weight: 600;
+        }
+
+        .navbar .nav-link:hover {
+            color: #497f3a;
         }
 
         .logo img {
             height: 100px;
             width: auto;
-            margin-left: -78px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #1f3a1f;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #497f3a;
-        }
-
-        /* Login Box */
         .login-box {
             max-width: 400px;
             margin: 80px auto;
             padding: 30px;
             background-color: rgba(0, 51, 0, 0.75);
             border-radius: 16px;
-            backdrop-filter: blur(2px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             color: white;
-            text-align: center;
         }
 
         .login-box h1 {
             font-weight: bold;
             font-size: 2.5rem;
             margin-bottom: 30px;
+            text-align: center;
         }
 
         .form-group {
-            margin-bottom: 20px;
             position: relative;
-        }
-
-        .form-control {
-            width: 100%;
-            border-radius: 50px;
-            padding: 10px 20px 10px 40px;
-            height: 45px;
-            border: none;
-            font-size: 1rem;
-            box-sizing: border-box;
         }
 
         .form-group i {
@@ -107,6 +71,14 @@
             color: #999;
         }
 
+        .form-control {
+            padding-left: 40px;
+            border-radius: 50px;
+            height: 45px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
         .btn-login {
             background-color: #D8731F;
             border: none;
@@ -114,7 +86,7 @@
             padding: 10px 30px;
             font-weight: bold;
             color: white;
-            cursor: pointer;
+            width: 100%;
             transition: background-color 0.3s ease;
         }
 
@@ -122,7 +94,6 @@
             background-color: #b95f15;
         }
 
-        /* Footer */
         .footer {
             background-color: #1f3a1f;
             color: white;
@@ -141,74 +112,80 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .logo img {
-                height: 50px;
-            }
+        .navbar-nav {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 20px;
         }
+
+        .navbar-nav .nav-link {
+            white-space: nowrap;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="custom-navbar">
-        <div class="navbar-content">
-            <a href="{{ url('/') }}" class="logo">
-                <img src="{{ URL::to('/assets/images/logo-website.png') }}" alt="Logo">
-            </a>
-            <div class="nav-links">
-                <a href="{{ url('/') }}">HOME</a>
-                <a href="/category/1">PRODUCT AND TOUR</a>
-                <a href="/category/2">NEWS AND BLOG</a>
-                <a href="{{ url('/csr') }}">CSR PROGRAM</a>
-                <a href="{{ url('/researchdedication') }}">RESEARCH AND DEDICATION</a>
-                <a href="{{ url('/aboutus') }}">ABOUT US</a>
-                <a href="{{ url('/contactus') }}">CONTACT US</a>
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-md navbar-light shadow-sm px-2">
+    <div class="container px-0" style="padding-left: 10px;">
+        <a class="navbar-brand logo" href="{{ url('/') }}">
+            <img src="{{ asset('assets/images/logo-website.png') }}" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/1">PRODUCT AND TOUR</a></li>
+                <li class="nav-item"><a class="nav-link" href="/category/2">NEWS AND BLOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/csr') }}">CSR PROGRAM</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/researchdedication') }}">RESEARCH AND DEDICATION</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/aboutus') }}">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/contactus') }}">CONTACT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="login-box">
+        <h1>Login</h1>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="form-group">
+                <i class="bi bi-envelope"></i>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
             </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Login Form -->
-        <div class="login-box">
-            <h1>Login</h1>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="form-group">
-                    <i class="bi bi-envelope"></i>
-                    <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-                </div>
+            <div class="form-group">
+                <i class="bi bi-lock"></i>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
 
-                <div class="form-group">
-                    <i class="bi bi-lock"></i>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
-                </div>
-
-                <button type="submit" class="btn-login">LOGIN</button>
-            </form>
-        </div>
+            <button type="submit" class="btn-login">LOGIN</button>
+        </form>
     </div>
+</div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <a href="#">REFUND POLICY</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">INDIKATOR PENGUNJUNG</a>
-    </div>
+<!-- Footer -->
+<div class="footer">
+    <a href="#">REFUND POLICY</a>
+    <a href="#">PRIVACY POLICY</a>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </body>
 </html>

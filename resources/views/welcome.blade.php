@@ -575,10 +575,7 @@
         <div class="hero-overlay">
             <div class="container text-center text-white">
                 <h1>Welcome To Patikang</h1>
-                <p class="subtitle">Lembur Mangrove, Desa Wisata Citeureup</p>
-                @guest
-                  <a href="{{ route('login') }}" class="btn login-btn">Login</a>
-                @endguest 
+                <p class="subtitle">Lembur Mangrove, Desa Wisata Citeureup</p> 
                 <a href="" class="btn btn-primary">Look Out!</a>
                 <div class="social-icons mt-4">
                     <a href="https://www.instagram.com/lembur_mangrove_patikang" class="social-icon"><i class="bi bi-instagram"></i></a>
