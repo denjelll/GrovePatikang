@@ -118,10 +118,24 @@
       }
 
       .login-btn {
+        background-color: #a65325;
+        color: white;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
         position: absolute;
         top: -230px;
         right: -520px;
         z-index: 10;
+      }
+
+      .login-btn:hover {
+        background-color: #883e1a;
+        color: white;
+        text-decoration: none;
       }
 
       .hero-section h1 {
@@ -563,9 +577,9 @@
                 <h1>Welcome To Patikang</h1>
                 <p class="subtitle">Lembur Mangrove, Desa Wisata Citeureup</p>
                 @guest
-                  <a href="{{ route('login') }}" class="btn btn-light login-btn">Login</a>
+                  <a href="{{ route('login') }}" class="btn login-btn">Login</a>
                 @endguest 
-                <a href="#" class="btn btn-primary">Look Out!</a>
+                <a href="" class="btn btn-primary">Look Out!</a>
                 <div class="social-icons mt-4">
                     <a href="https://www.instagram.com/lembur_mangrove_patikang" class="social-icon"><i class="bi bi-instagram"></i></a>
                     <a href="https://wa.me/+62817849463" class="social-icon"><i class="bi bi-whatsapp"></i></a>

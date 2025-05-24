@@ -186,4 +186,13 @@ class HomeController extends Controller
         $post = articles::with('User')->get();
         return view('informationpost',['post'=>$post]);
     }
+    public function editProductAndTour() {
+        $articles = Articles::where('category_id', 1)->get();
+        return view('admin.editproductandtour', compact('articles'));
+    }
+    
+    public function editNewsAndBlog() {
+        $articles = Articles::where('category_id', 2)->get();
+        return view('admin.editnewsandblog', compact('articles'));
+    }    
 }

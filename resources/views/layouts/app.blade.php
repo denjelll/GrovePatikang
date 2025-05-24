@@ -43,31 +43,25 @@
                         <a class="nav-link" href="{{ url('/') }}">
                             Home
                         </a>
-                        @auth
-                        @if (auth()->user()->role=="admin")
-                        <a class="nav-link" href="{{ url('/informationpost') }}">
-                            Admin
-                        </a>
+                        
+                @auth
+                    @if (auth()->user()->role == "admin")
+                        <a class="nav-link" href="{{ url('/informationpost') }}">Admin</a>
+                        <a class="nav-link" href="{{ url('/edit-productandtour') }}">Edit Product and Tour</a>
+                        <a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a>
                         @else
-                        <a class="nav-link" href="{{url('/editprofile')}}">
-                            Profil
-                        </a>
-                        <a class="nav-link" href="{{ url('/blog') }}">
-                            Blog
-                        </a>
-                        @endif
-                        @endauth
-                        @guest
-                        <a class="nav-link" href="{{ url('/aboutus') }}">
-                            About us
-                        </a>
-                        <a class="nav-link" href="{{ url('/contactus') }}">
-                            Contact us
-                        </a>
+                        <a class="nav-link" href="{{ url('/editprofile') }}">Profil</a>
+                        <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
+                    @endif
+                @endauth
+
+                    @guest
                         <a class="nav-link" href="/category/1">Product and Tour</a>
                         <a class="nav-link" href="/category/2">News and Blog</a>
                         <a class="nav-link" href="{{ url('/csr') }}">CSR Program</a>
                         <a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a>
+                        <a class="nav-link" href="{{ url('/aboutus') }}">About us</a>
+                        <a class="nav-link" href="{{ url('/contactus') }}">Contact us</a>
                 </div>
                     </li>
                         @endguest
