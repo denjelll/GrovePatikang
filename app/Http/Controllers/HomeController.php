@@ -194,5 +194,5 @@ class HomeController extends Controller
     public function editNewsAndBlog() {
         $articles = Articles::where('category_id', 2)->get();
         return view('admin.editnewsandblog', compact('articles'));
-    }    
+    }
 }

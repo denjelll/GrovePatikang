@@ -111,20 +111,6 @@
         .footer a:hover {
             text-decoration: underline;
         }
-
-        .navbar-nav {
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            white-space: nowrap;
-            gap: 20px;
-        }
-
-        .navbar-nav .nav-link {
-            white-space: nowrap;
-            padding-left: 12px;
-            padding-right: 12px;
-        }
-
     </style>
 </head>
 <body>

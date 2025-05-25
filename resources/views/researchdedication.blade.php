@@ -59,17 +59,14 @@ body, html {
 
 /* Research Section */
 .research-section {
-  padding: 60px 20px;
-  background-color: cornsilk;
-  margin-top: -48px;
-  margin-bottom: -40px;
+  padding: 40px 1px;
+  padding-bottom: 100px;
+  background: url("../assets/images/research-header.jpg")no-repeat center center/cover;
+  margin-top: -3rem;
 }
 
 /* Header Background */
 .header-background {
-  background : url('{{ URL::to('/assets/images/research-header.jpg') }}') no-repeat center center/cover;
-  background-size: cover;
-  background-position: center;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -200,7 +197,7 @@ a {
               <p class="section-subtitle">Penelitian & Pengabdian Masyarakat bagi Dunia Mangrove</p>
             </div>
           </div>
-
+    </section>
           <!-- Content Section -->
           <div class="content row mt-5">
             <!-- Left Text Content -->
@@ -238,7 +235,6 @@ a {
             </p>
           </div>
         </div>
-      </section>
 
         <!-- Bootstrap Bundle JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

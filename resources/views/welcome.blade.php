@@ -5,23 +5,24 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lembur  
-   Mangrove</title>
+    <title>Lembur Mangrove</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="home.css">  
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
        /* General Styles */
-       body,
-      html {
+    body, html {
         margin: 0;
         padding: 0;
         min-height: 100%;
         display: flex;
         flex-direction: column;
+        font-family: 'Poppins', sans-serif;
       }
 
       /* Page Wrapper for sticky footer */
@@ -107,14 +108,14 @@
 
       /* Hero Section */
       .hero-section {
-        background: url('images/mangrove-background.jpg') no-repeat center center/cover;
+        background: url("/assets/images/image1.jpg")no-repeat center center/cover;
         height: 82vh;
         /* Full screen height */
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        margin-bottom: -30px;
+        padding-bottom: 30px;
       }
 
       .login-btn {
@@ -126,9 +127,6 @@
         font-size: 1rem;
         font-weight: bold;
         border-radius: 5px;
-        position: absolute;
-        top: -230px;
-        right: -520px;
         z-index: 10;
       }
 
@@ -150,27 +148,9 @@
         position: relative;
       }
 
-
-
       .subtitle {
         font-size: 1.5rem;
         margin-bottom: 20px;
-      }
-
-      .btn-primary {
-        background-color: #a65325;
-        color: white;
-        padding: 10px 20px;
-        text-transform: uppercase;
-        border: none;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 5px;
-      }
-
-      .btn-primary:hover {
-        background-color: #883e1a;
-        text-decoration: none;
       }
 
       .social-icons {
@@ -570,7 +550,6 @@
   </head>
 
 <body>
-
     <section class="hero-section">
         <div class="hero-overlay">
             <div class="container text-center text-white">
@@ -617,7 +596,7 @@
             <div class="row mt-4">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
-                        <img src="{{ URL::to('/assets/images/tour-packages.jpg') }}" alt="Tour Packages" class="img-fluid rounded">
+                        <img src="{{ URL::to('/assets/images/tour-packages.jpg') }}" alt="Tour Packages" class="img-fluid rounded" loading="lazy">
                         <a href="/category/1" style="text-decoration: none;"> <h3>Tour Packages</h3> </a>
                         <p>
                             Paket Wisata lembur mangrove yang dengan konsep wisata edukasi, ekologi yang berkelanjutan bagi sosial ekonomi dan lingkungan.
@@ -626,7 +605,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
-                        <img src="{{ URL::to('/assets/images/mangrove-products.jpg') }}" alt="Mangrove Products" class="img-fluid rounded">
+                        <img src="{{ URL::to('/assets/images/mangrove-products.jpg') }}" alt="Mangrove Products" class="img-fluid rounded" loading="lazy">
                         <a href="/category/1" style="text-decoration: none;"> <h3> Mangrove Products </h3> </a>
                         <p>
                             Program CSR perusahaan dalam perlindungan lingkungan di pesisir yang dapat meningkatkan daya beli masyarakat sekitar.
@@ -644,7 +623,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
-                        <img src="{{ URL::to('/assets/images/research-dedication.jpg') }}" alt="Research and Dedication" class="img-fluid rounded">
+                        <img src="{{ URL::to('/assets/images/research-dedication.jpg') }}" alt="Research and Dedication" class="img-fluid rounded" loading="lazy">
                         <a href="{{ url('/researchdedication')}}" style="text-decoration: none;"><h3>Research and Dedication</h3></a>
                         <p>
                             Penelitian dan pengabdian akademisi sangat dibutuhkan dalam keberlangsungan kehidupan masyarakat sekitar.
@@ -693,19 +672,19 @@
         <div class="container text-center">
             <div class="row justify-content-center align-items-center mb-4">
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/exciting-banten-logo.png') }}" alt="Exciting Banten" class="partner-logo">
+                    <img src="{{ URL::to('/assets/images/exciting-banten-logo.png') }}" alt="Exciting Banten" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/chandra-asri-logo.png') }}" alt="Chandra Asri" class="partner-logo">
+                    <img src="{{ URL::to('/assets/images/chandra-asri-logo.png') }}" alt="Chandra Asri" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/pokdarwis-pandeglang-logo.png') }}" alt="Pokdarwis Pandeglang" class="partner-logo">
+                    <img src="{{ URL::to('/assets/images/pokdarwis-pandeglang-logo.png') }}" alt="Pokdarwis Pandeglang" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/tourism-logo.png') }}" alt="Tourism Logo" class="partner-logo">
+                    <img src="{{ URL::to('/assets/images/tourism-logo.png') }}" alt="Tourism Logo" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/kia-logo.png') }}" alt="KIA Logo" class="partner-logo">
+                    <img src="{{ URL::to('/assets/images/kia-logo.png') }}" alt="KIA Logo" class="partner-logo" loading="lazy">
                 </div>
             </div>
             <div class="contact-message">
@@ -721,7 +700,7 @@
                 @foreach ($post->where('category_id', 2)->take(3) as $post)
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog-card">
-                            <img src="{{ URL::to('/assets/images/'.$post->image) }}" alt="{{ $post->title }}" class="img-fluid rounded">
+                            <img src="{{ URL::to('/assets/images/'.$post->image) }}" alt="{{ $post->title }}" class="img-fluid rounded" loading="lazy">
                             <h3><a href="/post/{{$post->id}}" style="color: black; text-decoration: none; text-transform: uppercase;">{{ $post->title }}</a></h3>
                             <p>
                                 {!! \Illuminate\Support\Str::limit($post->description, 70) !!}

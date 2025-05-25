@@ -41,7 +41,7 @@
                 <!-- Navbar Konten -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Kiri -->
-                    <ul class="navbar-nav mr-auto d-flex align-items-center">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
