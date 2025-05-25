@@ -4,10 +4,15 @@
 
 <style>
     body {
-        background-color: #f0f4f8;
-    }
+        background-image: url("{{ asset('assets/images/image1.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }   
 
     .card {
+
         margin-top: 100px;
         border-radius: 16px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);

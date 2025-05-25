@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Home')
-
 @section('content')
-    <h1 class="mb-4">Welcome, Admin {{ Auth::user()->name }}</h1>
+    <h1 class="mb-4">Sawadikap, {{ Auth::user()->name }}</h1>
 
     <div class="card">
         <div class="card-body">

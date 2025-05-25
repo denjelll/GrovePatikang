@@ -30,8 +30,14 @@ Route::post('/createdblog','HomeController@createdblog')->name('createdblog');
 Route::get('/deleteblog/{id}','HomeController@deleteblog')->name('deleteblog');
 Route::get('/edituser','HomeController@edituser')->name('edituser');
 Route::get('/deleteduser/{id}','HomeController@deleteduser')->name('deleteduser');
-Route::get('/informationpost','HomeController@informationpost')->name('informationpost');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/informationpost', [HomeController::class, 'informationPost'])->name('admin.informationpost');
+});
 Route::get('/informationuser/{id}','HomeController@informationuser')->name('informationuser');
+Route::get('/redirect', 'HomeController@redirect')->middleware('auth');
+Route::get('/admin/dashboard', 'HomeController@adminDashboard')
+    ->name('admin.dashboard')
+    ->middleware('auth');
 
 Route::get('/', 'WelcomeController@indexshow')->name('homeshow');
 Route::get('/aboutus', 'WelcomeController@aboutus')->name('aboutus');
@@ -47,16 +53,4 @@ Route::get('/newsandblog', function () {
 })->name('newsandblog');
 Route::get('/category/{id}', 'WelcomeController@category')->name('category');
 Route::get('/testing', 'WelcomeController@testing')->name('testing');
-Route::get('/redirect', function () {
-    $user = auth()->user();
-
-    if ($user->role === 'admin') {
-        return redirect()->route('admin.dashboard');
-    } else {
-        return redirect()->route('homeshow'); // Halaman publik
-    }
-})->middleware(['auth']);
-Route::get('/admin/dashboard', function () {
-    return view('auth.admin.dashboard');
-})->name('admin.dashboard')->middleware('auth');
 

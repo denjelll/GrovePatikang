@@ -1,7 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@auth
-@if (Auth::user()->role=="admin")  
 @section('content')
 
 <div class="container">
@@ -44,5 +42,3 @@
 </div>
 </div>
 @endsection
-@endif
-@endauth

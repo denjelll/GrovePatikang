@@ -182,10 +182,16 @@ class HomeController extends Controller
         $user = User::all();
         return view('edituser',['user'=>$user]);
     }
-    public function informationpost(){
-        $post = articles::with('User')->get();
-        return view('informationpost',['post'=>$post]);
+    public function informationpost() {
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            $post = articles::with('user')->get(); // perhatikan: 'user' lowercase jika nama relasi lowercase
+            return view('informationpost', ['post' => $post]);
+        }
+    
+        // Bisa redirect ke halaman login atau tampilkan error
+        return redirect()->route('login'); // atau abort(403, 'Unauthorized');
     }
+    
     public function editProductAndTour() {
         $articles = Articles::where('category_id', 1)->get();
         return view('admin.editproductandtour', compact('articles'));
@@ -195,4 +201,19 @@ class HomeController extends Controller
         $articles = Articles::where('category_id', 2)->get();
         return view('admin.editnewsandblog', compact('articles'));
     }
-}
+
+    public function redirect()
+    {
+        $user = auth()->user();
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return redirect()->route('homeshow'); // halaman publik
+        }
+    }
+
+    public function adminDashboard()
+    {
+        return view('auth.admin.dashboard');
+    }
+}   
