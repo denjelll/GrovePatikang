@@ -95,11 +95,11 @@
             </div>
         </nav>
 
-        <!-- Content -->
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+    <!-- Content -->
+    <main>
+        @yield('content')
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
