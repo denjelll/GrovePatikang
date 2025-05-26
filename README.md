@@ -192,16 +192,14 @@ We welcome contributions from the community! Follow these steps:
 ---
 ## 🌟 **Special Thanks**
 We extend our gratitude to the following contributors and partners:
-- **Project Leader**: Lovenia Megumi Surjanto
-- **Public Relations**: Imel Sausan Maryam, Winsten, Christabell Grace Chalin
-- **Event Coordinators**: Angel Tambarna Teresa, Rafael Putra Hulu
-- **Visuals**: Maitriana, Luna Ardhagia Widodo
-- **Social Media**: Cindy Celia Jennifer, Kezia Margaretha Chandra
+- **Project Leader**: 
+- **Public Relations**: 
+- **Event Coordinators**: 
+- **Visuals**: 
+- **Social Media**: 
 - **Developers**:
   - Fullstack: Benediktus Denzel Galgani Lumenon
-  - Frontend: Aldo Juan Edrick Jolin, Ivan Reynardo
-  - Backend: Edward
-- **Videography**: Evelyn Valencia
+- **Videography**: 
 
 ---
 
