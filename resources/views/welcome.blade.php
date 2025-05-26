@@ -38,6 +38,7 @@
         top: 0;
         background-color: #fcfce6;
         border-bottom: 1px solid #ddd;
+        
       }
 
       .custom-navbar {
