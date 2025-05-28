@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-<!-- @auth
-@if (Auth::user()->role=="member") -->
+@auth
+@if (Auth::user()->role=="admin")
 @section('content')
 {{-- MULAI DARI SINI --}}
 <div class="card-body">

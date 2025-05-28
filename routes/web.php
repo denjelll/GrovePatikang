@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\welcome;
+use App\Http\Controllers\ProductAndTourController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,22 +18,25 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/editprofile', 'HomeController@profile')->name('profil');
+Route::get('/editprofile', 'HomeController@profile')->name('admin.profil');
 Route::post('/editedprofile', 'HomeController@editedprofile')->name('editedprofil');
-Route::get('/edit-productandtour', 'HomeController@editProductAndTour')->name('editproductandtour');
-Route::get('/edit-newsandblog', 'HomeController@editNewsAndBlog')->name('editnewsandblog');
 Route::get('/artikel', 'HomeController@blog')->name('artikel.index');
 Route::get('/artikel/create', 'HomeController@create')->name('createblog');
 Route::get('/blog', 'HomeController@blog')->name('blog');
+Route::get('/createblog', 'HomeController@createblog')->name('createblog');
+Route::post('/createdblog','HomeController@createdblog')->name('createdblog');
 Route::get('/editblog/{id}', 'HomeController@editblog')->name('editblog');
 Route::post('/editedblog/{id}', 'HomeController@editedblog')->name('editedblog');
-Route::post('/createdblog','HomeController@createdblog')->name('createdblog');
-Route::get('/deleteblog/{id}','HomeController@deleteblog')->name('deleteblog');
+Route::delete('/deleteblog/{id}', 'HomeController@deleteblog')->name('deleteblog');
+Route::get('/admin/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour');
+Route::get('/admin/productandtour/create', [ProductAndTourController::class, 'create'])->name('createproductandtour');
+Route::post('/admin/productandtour/store', [ProductAndTourController::class, 'store'])->name('storeproductandtour');
+Route::get('/admin/productandtour/edit/{id}', [ProductAndTourController::class, 'edit'])->name('editproductandtour');
+Route::put('/admin/productandtour/update/{id}', [ProductAndTourController::class, 'update'])->name('updateproductandtour');
+Route::delete('/admin/productandtour/delete/{id}', [ProductAndTourController::class, 'destroy'])->name('deleteproductandtour');
 Route::get('/edituser','HomeController@edituser')->name('edituser');
 Route::get('/deleteduser/{id}','HomeController@deleteduser')->name('deleteduser');
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/informationpost', [HomeController::class, 'informationPost'])->name('admin.informationpost');
-});
+Route::get('/informationpost', 'HomeController@informationpost')->name('informationpost');
 Route::get('/informationuser/{id}','HomeController@informationuser')->name('informationuser');
 Route::get('/redirect', 'HomeController@redirect')->middleware('auth');
 Route::get('/admin/dashboard', 'HomeController@adminDashboard')

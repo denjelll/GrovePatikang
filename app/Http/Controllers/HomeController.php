@@ -32,9 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jumlahArtikel = Articles::count(); // Sesuaikan jika nama model bukan 'articles'
-
-        return view('home', compact('jumlahArtikel'));
+        return view('home');
     }
 
 
@@ -60,15 +58,15 @@ class HomeController extends Controller
     }
     public function blog(){
         $user = Auth::user();
-        $articles = articles::with('User')->where('user_id',$user->id)->get();
-        return view('blog',['articles'=>$articles]);
+        $articles = Articles::with('User')->where('user_id',$user->id)->get();
+        return view('auth.admin.blog',['articles'=>$articles]);
     }
 
     public function editblog($id){
         $user = Auth::user();
         $category = categories::all();
-        $articles = articles::where('id',$id)->first();
-        return view("editblog",['user'=>$user,'category'=>$category,'articles'=>$articles]);
+        $articles = Articles::where('id',$id)->first();
+        return view("auth.admin.editblog",['user'=>$user,'category'=>$category,'articles'=>$articles]);
     }
     public function createblog(){
         $user = Auth::user();
@@ -108,58 +106,45 @@ class HomeController extends Controller
         return redirect()->route('blog')->with('message', 'Blog created successfully!');
     }
     
-    public function deleteblog($id){
-        $articles = articles::where('id',$id)->first();
-        $articles->delete();
+    public function editedblog($id, Request $request)
+    {
         $user = Auth::user();
-        $articles = articles::with('User')->where('user_id',$user->id)->get();
-        return Redirect::back()->with('message','Delete Successful !');
-    }
-    public function editedblog($id, Request $request){
-    $user = Auth::user();
-    Validator::make($request->all(), [
-        'title'   => 'required',
-        'textarea' => 'required',
-        'image'        => 'nullable|mimes:jpeg,png,jpg',
-    ])->validate();
-    $check = $request->hasFile('image');
-        if($check){
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $name = $request->file('image')->getClientOriginalName();
-                $destinationPath = public_path('assets/images');
-                $imagePath = $destinationPath. "/".  $name;
-                $image->move($destinationPath, $name);
-              }
-            $articles = articles::where('id', $id)->first();
-            $articles->user_id = $user->id;
-            $articles->category_id = $request->myselect+1;
-            $articles->title = $request->title;
-            $articles->description = $request->textarea;
-            $articles->image = $name;
-            $articles->tags = $request->tags;
-            $articles->lowprice = $request->lowprice;
-            $articles->highprice = $request->highprice;
-            $articles->penjelasan = $request->penjelasan;
-            $articles->ukuran = $request->ukuran;
-            $articles->save();
-
-        }else{
-            $articles = articles::where('id', $id)->first();
-            $articles->user_id = $user->id;
-            $articles->category_id = $request->myselect+1;
-            $articles->title = $request->title;
-            $articles->description = $request->textarea;
-            $articles->tags = $request->tags;
-            $articles->lowprice = $request->lowprice;
-            $articles->highprice = $request->highprice;
-            $articles->penjelasan = $request->penjelasan;
-            $articles->ukuran = $request->ukuran;
-            $articles->save();
+    
+        // Validasi input
+        Validator::make($request->all(), [
+            'title'   => 'required',
+            'description' => 'required',
+            'image'   => 'nullable|mimes:jpeg,png,jpg',
+        ])->validate();
+    
+        // Ambil artikel yang akan diupdate
+        $article = articles::findOrFail($id);
+    
+        // Update data umum
+        $article->user_id = $user->id;
+        $article->category_id = $request->category_id;
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->tags = $request->tags;
+        $article->lowprice = $request->lowprice;
+        $article->highprice = $request->highprice;
+        $article->penjelasan = $request->penjelasan;
+        $article->ukuran = $request->ukuran;
+    
+        // Update gambar jika ada
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time() . '_' . $image->getClientOriginalName();
+            $destinationPath = public_path('assets/images');
+            $image->move($destinationPath, $name);
+            $article->image = $name;
         }
-        $user = Auth::user();
-        $articles = articles::with('User')->where('user_id',$user->id)->get();
-        return view('blog',['articles'=>$articles]);
+    
+        // Simpan ke database
+        $article->save();
+    
+        // Redirect ke halaman blog dengan pesan sukses
+        return redirect('blog')->with('message', 'Blog berhasil diupdate!');
     }
 
     public function edituser(){
@@ -184,12 +169,20 @@ class HomeController extends Controller
     }
     public function informationpost() {
         if (Auth::check() && Auth::user()->role === 'admin') {
-            $post = articles::with('user')->get(); // perhatikan: 'user' lowercase jika nama relasi lowercase
+            $post = Articles::with('user')->get(); // perhatikan: 'user' lowercase jika nama relasi lowercase
             return view('informationpost', ['post' => $post]);
         }
     
         // Bisa redirect ke halaman login atau tampilkan error
         return redirect()->route('login'); // atau abort(403, 'Unauthorized');
+    }
+    
+    public function productAndTour()
+    {
+        // Ambil semua artikel yang termasuk kategori "Product and Tour" (asumsikan category_id = 1)
+        $articles = Articles::where('category_id', 1)->get();
+    
+        return view('auth.admin.productandtour', compact('articles'));
     }
     
     public function editProductAndTour() {

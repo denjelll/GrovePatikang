@@ -42,22 +42,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Kiri -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
-                        </li>
-
+                        
                         @auth
-                            @if (auth()->user()->role == "admin")
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/informationpost') }}">Admin</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/edit-productandtour') }}">Edit Product and Tour</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a></li>
-                            @else
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/editprofile') }}">Profil</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Blog</a></li>
-                            @endif
+                        @if (auth()->user()->role == "admin")
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/admin/dashboard') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Create Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/informationpost') }}">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/admin/productandtour') }}">Edit Product and Tour</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/editprofile') }}">Profil</a></li>
+                        @endif
                         @endauth
-
+                        
                         @guest
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="/category/1">Product and Tour</a></li>
                             <li class="nav-item"><a class="nav-link" href="/category/2">News and Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/csr') }}">CSR Program</a></li>
