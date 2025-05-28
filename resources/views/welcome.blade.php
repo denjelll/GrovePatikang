@@ -317,6 +317,16 @@
         padding: 10px;
       }
 
+      .partner-logo.umn-logo {
+      width: 110px;
+      height: auto;
+      }
+
+      .partner-logo.umngrove-logo {
+        width: 300px;
+        height: auto;
+      }
+
       .contact-message {
         margin-top: 20px;
         font-size: 1.7rem;
@@ -686,6 +696,12 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
                     <img src="{{ URL::to('/assets/images/kia-logo.png') }}" alt="KIA Logo" class="partner-logo" loading="lazy">
+                </div>
+                <div class="col-lg-2 col-md-3 col-4">
+                    <img src="{{ URL::to('/assets/images/umn.png') }}" alt="UMN" class="partner-logo umn-logo" loading="lazy">
+                </div>
+                <div class="col-lg-2 col-md-3 col-4">
+                    <img src="{{ URL::to('/assets/images/umngrove.png') }}" alt="umngrove" class="partner-logo umngrove-logo" loading="lazy">
                 </div>
             </div>
             <div class="contact-message">

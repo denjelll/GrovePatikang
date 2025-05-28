@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\welcome;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProductAndTourController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,9 +49,8 @@ Route::get('/contactus', 'WelcomeController@contactus')->name('contactus');
 Route::get('/csr', 'WelcomeController@csr')->name('csr');
 Route::get('/researchdedication', 'WelcomeController@researchdedication')->name('researchdedication');
 Route::get('/post/{id}', 'WelcomeController@post')->name('post');
-Route::get('/productandtour', function () {
-    return redirect()->route('category', ['id' => 1]);
-})->name('productandtour');
+Route::get('/productandtour', [WelcomeController::class, 'productAndTourForGuest'])->name('productandtour');
+// Route::get('/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour.index');
 Route::get('/newsandblog', function () {
     return redirect()->route('category', ['id' => 2]);
 })->name('newsandblog');

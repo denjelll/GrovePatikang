@@ -6,18 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Articles;
+use App\Models\Categories;
 
 class ProductAndTourController extends Controller
 {
     public function index()
     {
-        $articles = Articles::where('category_id', 1)->get(); // Category 1 assumed for Product & Tour
+        $articles = Articles::with('category')->get();
         return view('auth.admin.productandtour', compact('articles'));
     }
 
     public function create()
     {
-        return view('auth.admin.createproductandtour');
+        $categories = Categories::all(); // Ambil semua kategori
+        return view('auth.admin.createproductandtour', compact('categories'));
     }
 
     public function store(Request $request)
@@ -34,7 +36,7 @@ class ProductAndTourController extends Controller
 
         $article = new Articles();
         $article->user_id = Auth::id();
-        $article->category_id = 1;
+        $article->category_id = $request->category_id;
         $article->title = $request->title;
         $article->description = $request->textarea;
         $article->tags = $request->tags;

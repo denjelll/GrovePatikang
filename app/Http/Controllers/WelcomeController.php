@@ -48,4 +48,22 @@ class WelcomeController extends Controller
         $post = articles::where('category_id', 4)->get(); // Fetch posts with category_id 4
         return view('testing', ['post' => $post]);
     }
+
+    public function productAndTourForGuest(Request $request)
+    {
+        $query = Articles::where('category_id', 1);
+    
+        // Optional filter by search or price
+        if ($request->has('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+    
+        if ($request->filled('min') && $request->filled('max')) {
+            $query->whereBetween('lowprice', [$request->min, $request->max]);
+        }
+    
+        $articles = $query->latest()->paginate(10);
+    
+        return view('productandtour', compact('articles'));
+    }    
 }

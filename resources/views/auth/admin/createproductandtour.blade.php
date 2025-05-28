@@ -13,11 +13,20 @@
     <form action="{{ route('storeproductandtour') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
+        
         <div class="mb-3">
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" required>
         </div>
-
+        <div class="mb-3">
+            <label for="category_id">Kategori</label>
+            <select name="category_id" class="form-control" required>
+                <option value="" disabled selected>Pilih kategori</option>
+                <option value="1">Produk</option>
+                <option value="2">Tour</option>
+            </select>
+        </div>
+        
         <div class="mb-3">
             <label for="textarea">Description</label>
             <textarea class="form-control" name="textarea" rows="5" required></textarea>
