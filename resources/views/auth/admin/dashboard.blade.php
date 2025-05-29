@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="mb-4">👋 Sawadikap, {{ Auth::user()->name }}</h1>
+    <h1 class="mb-4">👋 Halo, {{ Auth::user()->name }}</h1>
     <p class="text-muted">Selamat datang di Dashboard Admin. Kelola konten website dari panel ini.</p>
 
     <div class="row g-4">

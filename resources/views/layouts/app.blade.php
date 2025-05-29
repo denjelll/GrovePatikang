@@ -46,9 +46,9 @@
                         @auth
                         @if (auth()->user()->role == "admin")
                         <li class="nav-item"><a class="nav-link" href="{{ url('/admin/dashboard') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Create Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/admin/productandtour') }}">Manage Product and Tour</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Manage News and Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/informationpost') }}">Admin</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/admin/productandtour') }}">Edit Product and Tour</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/editprofile') }}">Profil</a></li>
                         @endif
