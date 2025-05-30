@@ -13,16 +13,13 @@ class DatabaseSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
                 DB::table('users')->insert([
-                    ["name" => "AdminEdward","email"=>"edward007@binus.ac.id","password"=>Hash::make("adminEdward"),"phone"=>"081289434641","role"=>"admin"],
-                    ["name" => "AdminAnsel","email"=>"ansellino@binus.ac.id","password"=>Hash::make("adminAnsel"),"phone"=>"081229574140","role"=>"admin"],
-                    ["name" => "Member001","email"=>"member001@gmail.com","password"=>Hash::make("member001"),"phone"=>"089509772528","role"=>"member"],
-                    ["name" => "Member002","email"=>"member002@gmail.com","password"=>Hash::make("member002"),"phone"=>"089509772528","role"=>"member"]
+                    "name" => "UMN GROVE","email"=>"umngrove@gmail.com","password"=>Hash::make("ComsusMangrove855"),"phone"=>"081111111111","role"=>"admin"
                 ]);
                 DB::table('categories')->insert([
-                    ["name" => "Product and Tour"],
-                    ["name" => "News and Blog"],
-                    ["name" => "Update Website"],
-                    ["name" => "OurOffer"],
+                    ["name" => "Product"],
+                    ["name" => "Tour"],
+                    ["name" => "News"],
+                    ["name" => "Blog"],
                     ["name" => "Others"]
                 ]);
                 DB::table('articles')->insert([
