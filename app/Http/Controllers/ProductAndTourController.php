@@ -12,9 +12,14 @@ class ProductAndTourController extends Controller
 {
     public function index()
     {
-        $articles = Articles::with('category')->get();
+        $categoryIds = Categories::whereIn('name', ['product', 'tour'])->pluck('id');
+    
+        $articles = Articles::with('category')
+            ->whereIn('category_id', $categoryIds)
+            ->get();
+    
         return view('auth.admin.productandtour', compact('articles'));
-    }
+    }    
 
     public function create()
     {

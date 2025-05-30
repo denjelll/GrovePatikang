@@ -43,13 +43,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="lowprice">Low Price</label>
+            <label for="lowprice">Harga</label>
             <input type="number" class="form-control" name="lowprice">
-        </div>
-
-        <div class="mb-3">
-            <label for="highprice">High Price</label>
-            <input type="number" class="form-control" name="highprice">
         </div>
 
         <div class="mb-3">
