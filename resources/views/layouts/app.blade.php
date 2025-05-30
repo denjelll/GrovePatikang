@@ -55,8 +55,8 @@
                         
                         @guest
                             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/category/1">Product and Tour</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/category/2">News and Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('product-tour') }}">Product and Tour</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/category/3">News and Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/csr') }}">CSR Program</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/aboutus') }}">About us</a></li>

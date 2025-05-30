@@ -50,7 +50,9 @@ Route::get('/contactus', 'WelcomeController@contactus')->name('contactus');
 Route::get('/csr', 'WelcomeController@csr')->name('csr');
 Route::get('/researchdedication', 'WelcomeController@researchdedication')->name('researchdedication');
 Route::get('/post/{id}', 'WelcomeController@post')->name('post');
-Route::get('/productandtour', [WelcomeController::class, 'productAndTourForGuest'])->name('productandtour');
+Route::get('/product-tour', [WelcomeController::class, 'productTour'])->name('product.tour');
+
+// Route::get('/productandtour', [WelcomeController::class, 'productAndTourForGuest'])->name('productandtour');
 // Route::get('/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour.index');
 Route::get('/newsandblog', function () {
     return redirect()->route('category', ['id' => 2]);

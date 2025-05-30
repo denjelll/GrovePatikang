@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Categories;
 use App\Models\Articles;
+use App\Models\Visitor;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
@@ -22,11 +24,27 @@ class WelcomeController extends Controller
         $post = articles::where('category_id', 4)->get(); // Fetch posts with category_id 4
         return view('aboutus', ['post' => $post]);
     }
+
     public function category($id){
-        $post = articles::with('Category')->where('category_id',$id)->get();
-        $category = categories::where('id',$id)->first();
-        return view('category',['post'=>$post,'category'=>$category]);
+        // Jika ID yang diminta adalah 1 (Product and Tour)
+        if ($id == 1) {
+            $post = Articles::with('category')->whereIn('category_id', [1, 2])->get();
+            $category = (object) ['name' => 'Product and Tour'];
+        }
+        // Jika ID yang diminta adalah 3 (News and Blog)
+        elseif ($id == 3) {
+            $post = Articles::with('category')->whereIn('category_id', [3, 4])->get();
+            $category = (object) ['name' => 'News and Blog'];
+        }
+        // Kategori lain (tampilkan artikel dari satu kategori saja)
+        else {
+            $post = Articles::with('category')->where('category_id', $id)->get();
+            $category = Categories::where('id', $id)->first();
+        }
+    
+        return view('category', ['post' => $post, 'category' => $category]);
     }
+    
     public function post($id){
         $post = articles::with('user')->find($id);
         return view('post',['post'=>$post]);
@@ -49,21 +67,13 @@ class WelcomeController extends Controller
         return view('testing', ['post' => $post]);
     }
 
-    public function productAndTourForGuest(Request $request)
+    public function productTour()
     {
-        $query = Articles::where('category_id', 1);
+        // Ambil data dari category_id 1 (Tour Packages) dan 2 (Product)
+        $posts = Articles::with('category')->whereIn('category_id', [1, 2])->get();
     
-        // Optional filter by search or price
-        if ($request->has('search')) {
-            $query->where('title', 'like', '%' . $request->search . '%');
-        }
+        return view('product-tour', ['posts' => $posts]);
+    }
     
-        if ($request->filled('min') && $request->filled('max')) {
-            $query->whereBetween('lowprice', [$request->min, $request->max]);
-        }
-    
-        $articles = $query->latest()->paginate(10);
-    
-        return view('productandtour', compact('articles'));
-    }    
+  
 }
