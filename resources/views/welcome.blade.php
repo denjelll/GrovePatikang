@@ -295,11 +295,12 @@
       }
 
       .collaboration-title {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: bold;
         color: white;
         text-transform: uppercase;
         margin: 0;
+        wordwrap:break;
       }
 
       /* Partners Section */
@@ -329,9 +330,10 @@
 
       .contact-message {
         margin-top: 20px;
-        font-size: 1.7rem;
+        font-size: 2 rem;
         color: #a65325;
         font-weight: bold;
+        text-align: center;
       }
 
       .contact-message a {
@@ -340,6 +342,7 @@
         padding: 5px 10px;
         border-radius: 5px;
         text-decoration: none;
+        display: inline-block;
       }
 
       .contact-message p {
@@ -504,11 +507,12 @@
     }
 
     .procedure-box h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
     color: #4b644a;
     font-family: 'poppins';
+    wordwrap: break;
     }
 
     .procedure-list {
@@ -738,9 +742,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <div class="about-box text-white">
-                        <h2>about us</h2>
+                        <h2>About Us</h2>
                         <p>
-                            <i class="fas fa-map-marker-alt"></i> Kampung Patikang, Desa Citeureup, Panimbang, Pandeglang, Banten, Indonesia
+                            <i class="fas fa-map-marker-alt"></i>Kampung Patikang, Desa Citeureup, Panimbang, Pandeglang, Banten, Indonesia
                         </p>
                         <p>
                             <i class="fas fa-phone-alt"></i> Deden: +62 817-849-463<br>Mon – Fri, 8:00-22:00
@@ -749,7 +753,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-box">
-                        <h2>hubungi kami</h2>
+                        <h2>Contact Us</h2></h2>
                         <form action="mailto:HELLO@LEMBURMANGROVE.com" method="POST">
                             <div class="form-group">
                                 <input type="text" name="name" placeholder="Insert Name" class="form-control" required>

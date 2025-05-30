@@ -75,5 +75,15 @@ class WelcomeController extends Controller
         return view('product-tour', ['posts' => $posts]);
     }
     
-  
+    public function newsAndBlog()
+    {
+        // Ambil artikel yang hanya berasal dari kategori News (3) dan Blog (4)
+        $posts = Articles::with('category')
+            ->whereIn('category_id', [3, 4])
+            ->orderBy('created_at', 'desc')
+            ->get();
+    
+        return view('news-blogs', ['posts' => $posts]);
+    }
+    
 }

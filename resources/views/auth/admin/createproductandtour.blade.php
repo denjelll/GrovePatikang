@@ -19,11 +19,11 @@
             <input type="text" class="form-control" name="title" required>
         </div>
         <div class="mb-3">
-            <label for="category_id">Kategori</label>
+            <label for="category_id">Category</label>
             <select name="category_id" class="form-control" required>
-                <option value="" disabled selected>Pilih kategori</option>
-                <option value="1">Produk</option>
-                <option value="2">Tour</option>
+                <option value="" disabled selected>Choose Category</option>
+                <option value="1">Product</option>
+                <option value="2">Tour</option> 
             </select>
         </div>
         
@@ -43,17 +43,17 @@
         </div>
 
         <div class="mb-3">
-            <label for="lowprice">Harga</label>
-            <input type="number" class="form-control" name="lowprice">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" name="price">
         </div>
 
         <div class="mb-3">
-            <label for="penjelasan">Penjelasan</label>
+            <label for="penjelasan">Detail</label>
             <textarea class="form-control" name="penjelasan" rows="3"></textarea>
         </div>
 
         <div class="mb-3">
-            <label for="ukuran">Ukuran</label>
+            <label for="ukuran">Stock</label>
             <input type="text" class="form-control" name="ukuran">
         </div>
 

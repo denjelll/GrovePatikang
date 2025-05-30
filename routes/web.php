@@ -51,6 +51,7 @@ Route::get('/csr', 'WelcomeController@csr')->name('csr');
 Route::get('/researchdedication', 'WelcomeController@researchdedication')->name('researchdedication');
 Route::get('/post/{id}', 'WelcomeController@post')->name('post');
 Route::get('/product-tour', [WelcomeController::class, 'productTour'])->name('product.tour');
+Route::get('/news-and-blogs', [WelcomeController::class, 'newsAndBlog']);
 
 // Route::get('/productandtour', [WelcomeController::class, 'productAndTourForGuest'])->name('productandtour');
 // Route::get('/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour.index');
