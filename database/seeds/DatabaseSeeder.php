@@ -24,40 +24,31 @@ class DatabaseSeeder extends Seeder
                 ]);
                 DB::table('articles')->insert([
                     ["user_id" => "1",
-                     "category_id"=>"5",
-                     "title"=>"copyright",
-                     "description"=>"dibuat oleh ansel dan edward",
-                     "image"=>"About-Us.jpg",
-                     "created_at"=>"2024-11-29 08:25:19",
-                     "updated_at"=>"2024-11-29 08:25:19"]
-                ]);
-                DB::table('articles')->insert([
-                    ["user_id" => "2",
-                     "category_id"=>"4",
+                     "category_id"=>"2",
                      "title"=>"Eksplorasi Mangrove",
                      "description"=>"Ikuti tur berpemandu untuk menjelajahi hutan mangrove, belajar tentang keanekaragaman hayati, dan memahami pentingnya konservasi mangrove.",
                      "image"=>"explorasi-mangrove.jpg",
-                     "created_at"=>"2024-11-29 08:25:19",
-                     "updated_at"=>"2024-11-29 08:25:19"]
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
                 DB::table('articles')->insert([
-                    ["user_id" => "2",
-                     "category_id"=>"4",
+                    ["user_id" => "1",
+                     "category_id"=>"2",
                      "title"=>"Petualangan Laut",
                      "description"=>"Rasakan ketenangan alam laut dan hutan mangrove, cocok untuk pecinta alam dan fotografi. Ada juga paket snorkeling dan lainnya untuk pecinta laut.",
                      "image"=>"petualangan-laut.jpg",
-                     "created_at"=>"2024-11-29 08:25:19",
-                     "updated_at"=>"2024-11-29 08:25:19"]
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
                 DB::table('articles')->insert([
-                    ["user_id" => "2",
-                     "category_id"=>"4",
+                    ["user_id" => "1",
+                     "category_id"=>"2",
                      "title"=>"Pengalaman Edukasi",
                      "description"=>"Ambil bagian dalam kegiatan seperti penanaman mangrove dan pelatihan tentang praktik berkelanjutan yang mendukung lingkungan dan masyarakat.",
                      "image"=>"pengalaman-edukasi.jpg",
                      "tags"=>"#laut #pencinta alam #petualangan #snorkeling",
-                     "created_at"=>"2024-11-29 08:25:19",
-                     "updated_at"=>"2024-11-29 08:25:19"]
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
 
         Schema::enableForeignKeyConstraints();
