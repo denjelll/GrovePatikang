@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-<!-- {{-- @auth
-@if (Auth::user()->role=="member")  --}} -->
 @section('content')
 
 @if($post->category_id == 1)
@@ -33,16 +31,16 @@
 
             .title-product-service {
                 background: url('{{ URL::to('/assets/images/product-lembur-mangrove.webp') }}') no-repeat center center/cover;
-                height: 300px;
+                height: 450px;
                 /* Add these lines */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 /* End of added lines */
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-                image-rendering: -webkit-optimize-contrast; /* For Chrome and Safari */
-                image-rendering: crisp-edges;              /* General */
-                image-rendering: pixelated;                /* For pixel art scaling */
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;              
+                image-rendering: pixelated;                
             }
 
             @media (max-width: 768px) {
@@ -134,8 +132,7 @@
     <body>
         <section>
             <div class="text-center mb-4">
-                <div class="title-product-service" style="margin-top: -1.5%; padding: 0; border-radius: 0; -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;">
+                <div class="title-product-service">
                     <h1 class="fw-bold">Our Products and Services</h1>
                     <p>Membeli berarti membantu kami selamatkan bumi.</p>
                 </div>
@@ -164,7 +161,7 @@
                                 <div class="col-lg-6">
                                     <h2 class="fw-bold" style="color: #C4661F; font-size: 30px;">{{$post->title}}</h2>
                                     <p>{{$post->penjelasan}}</p>
-                                    <h4 class="text-success fw-bold" style="color: #000 !important;">Rp.{{$post->lowprice}} - Rp.{{$post->highprice}}</h4>
+                                    <h4 class="text-success fw-bold" style="color: #000 !important;">Rp {{ number_format($post->price, 0, ',', '.') }}</h4>
                                     <p><strong>Available variants:</strong></p>
                                     <ul>
                                         <li>{{$post->ukuran}}</li>

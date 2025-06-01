@@ -97,8 +97,7 @@ class HomeController extends Controller
         $article->description = $request->textarea;
         $article->image = $imageName;
         $article->tags = $request->tags;
-        $article->lowprice = $request->lowprice;
-        $article->highprice = $request->highprice;
+        $article->price = $request->price;
         $article->penjelasan = $request->penjelasan;
         $article->ukuran = $request->ukuran;
         $article->save();
@@ -126,8 +125,7 @@ class HomeController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $article->tags = $request->tags;
-        $article->lowprice = $request->lowprice;
-        $article->highprice = $request->highprice;
+        $article->price = $request->price;
         $article->penjelasan = $request->penjelasan;
         $article->ukuran = $request->ukuran;
     

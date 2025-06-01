@@ -1,245 +1,169 @@
 @extends('layouts.app')
-<!-- {{-- @auth
-@if (Auth::user()->role=="member") --}} -->
 @section('content')
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-
-  <title>CSR Program - Lembur Mangrove</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Page Wrapper for sticky footer */
-  .page-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Header */
-  .main-header {
-    width: 100%;
-    top: 0;
-    background-color: #fcfce6;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .custom-navbar {
-    padding: 10px 0;
-  }
-
-  .logo {
-    height: 60px;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #000;
-    margin: 0 15px;
-    text-transform: uppercase;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #333;
-    text-decoration: none;
-  }
-
-/* Research Section */
-.research-section {
-  padding: 40px 1px;
-  padding-bottom: 100px;
-  background: url("../assets/images/research-header.jpg")no-repeat center center/cover;
-  margin-top: -3rem;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefae0;
 }
 
-/* Header Background */
+.csr-banner {
+      background: url('{{ URL::to('/assets/images/image6.jpg') }}') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-top:-47px;
+    }
+
+/* Header Section */
 .header-background {
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
-.header-background .section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+.header-background h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-.header-background .section-subtitle {
-  font-size: 1.2rem;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+.header-background p {
+    font-size: 1.2rem;
 }
 
-/* Content Section */
-.content h2 {
-  margin-top: 35px;
-  font-size: 2.1rem;
-  color: #4b644a;
-  margin-bottom: 20px;
-  text-align: right;
-  margin-right: 40px;
+/* Content Box */
+.content-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
-.content p {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #333;
-  text-align: right;
-  margin-right: 40px;
+.content-box h3 {
+    font-size: 2.2rem;
+    color: #4b644a;
+    margin-bottom: 20px;
 }
 
-.content-image {
-  background : url('{{ URL::to('/assets/images/research-image.jpg') }}') no-repeat center center/cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 1;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  width: 500px;
-  height: 650px;
+.content-box p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
-/* Call-to-Action Section */
+/* CTA */
+.cta-section {
+    background: url("{{ asset('assets/images/frame-44.png') }}") no-repeat center center/cover;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
 .btn-contact {
-  background-color: #f4a261;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
+    background-color: #a65325;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .btn-contact:hover {
-  background-color: #e76f51;
-  color: white;
+    background-color: #e76f51;
 }
 
-a {
-  color: #4b644a;
-  text-decoration: underline;
+.contact-message {
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+.contact-message a {
+    color: white;
+    font-weight: bold;
+}
+.section-title {
+  font-weight: 800;
+  font-size: 3rem;
+  color: #415634; /* warna hijau gelap, bisa disesuaikan */
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-    /* Footer */
-    .footer {
-        background-color: #4b634e;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-        margin-top: auto; /* Ensure footer stays at the bottom */
-      }
+/* Buat agar paragraf teks rata kanan-kiri */
+.col-lg-7 p {
+  text-align: justify;
+}
 
-      .footer-link {
-        color: white;
-        margin: 0 10px;
-        text-decoration: none;
-        font-size: 0.9rem;
-      }
+/* Sesuaikan tinggi gambar agar match dengan tinggi kolom teks */
+.research-image {
+  width: 73%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
-      .footer-link:hover {
-        text-decoration: underline;
-      }
-
-      .contact-message {
-        margin-top: 20px;
-        font-size: 1.5rem;
-        color: #a65325;
-        font-weight: bold;
-      }
-      .contact-message a {
-        color: white;
-        background-color: #a65325;
-        padding: 5px 10px;
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .contact-message p {
-        margin-top: -4px;
-        margin-bottom: 0rem;
-      }
-
-      .contact-message a:hover {
-        background-color: #883e1a;
-      }
 </style>
-</head>
-<body>
-    <section class="research-section">
-        <div class="container">
-          <!-- Header Section -->
-          <div class="header">
-            <div class="header-background">
-              <h2 class="section-title">Research & Dedication</h2>
-              <p class="section-subtitle">Penelitian & Pengabdian Masyarakat bagi Dunia Mangrove</p>
-            </div>
-          </div>
-    </section>
-          <!-- Content Section -->
-          <div class="content row mt-5">
-            <!-- Left Text Content -->
-            <div class="col-lg-7">
-              <h2>Open to All Research & Dedication Initiatives!</h2>
-              <p>
-                Patikang Mangrove Valley in Citeureup Village is an area rich in potential for research and community
-                service activities. As a conservation and empowerment-based tourism village, we open opportunities for collaboration
-                with universities and academic institutions to jointly create positive impacts through science and real action.
-              </p>
-              <p>
-                Lembur Mangrove believes that synergy between the academic world and local communities can be a
-                strong foundation for creating sustainable change. We are committed to providing
-                facilities and access that support the success of research and service programs in this area.
-              </p>
-              <p>
-                If your university or institution is interested in working together, please contact us through
-                our official contact for more information. Together, let us improve our understanding and contribution
-                to environmental conservation and community welfare in Lembur Mangrove.
-              </p>
-            </div>
-            <!-- Right Image Content -->
-            <div class="col-lg-5">
-              <div class="content-image"></div>
-            </div>
-          </div>
 
-          <!-- Call to Action Section -->
-          <div class="cta-section text-center mt-5">
-            <a href="https://wa.me/62817849463" class="btn btn-contact">
-              Click Here to Chat Pak Deden at +62 817-849-463
-            </a>
-            <p class="contact-message">
-              Email us at <a href="mailto:hello@lemburmangrove.com">hello@lemburmangrove.com</a>
-            </p>
-          </div>
-        </div>
+<section class="csr-banner">
+  <div class="container py-5">
+      <div class="header-background">
+          <h2>Research & Dedication</h2>
+          <p>Penelitian & Pengabdian Masyarakat bagi Dunia Mangrove</p>
+      </div>
+</section>
 
-        <!-- Bootstrap Bundle JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<div class="container py-5">
+  <div class="row align-items-center">
+    <!-- Kolom kiri: teks -->
+    <div class="col-lg-7">
+      <h2 class="section-title">Open to All Research &<br>Dedication Initiatives!</h2>
+      <p>
+        Patikang Mangrove Valley in Citeureup Village is an area rich in potential for research and
+        community service activities. As a conservation and empowerment-based tourism village, we open
+        opportunities for collaboration with universities and academic institutions to jointly create
+        positive impacts through science and real action.
+      </p>
+      <p>
+        Lembur Mangrove believes that synergy between the academic world and local communities can be
+        a strong foundation for creating sustainable change. We are committed to providing facilities
+        and access that support the success of research and service programs in this area.
+      </p>
+      <p>
+        If your university or institution is interested in working together, please contact us through
+        our official contact for more information. Together, let us improve our understanding and
+        contribution to environmental conservation and community welfare in Lembur Mangrove.
+      </p>
+    </div>
+
+    <!-- Kolom kanan: gambar -->
+    <div class="col-lg-5 text-center h-100 d-flex align-items-stretch">
+      <img src="{{ asset('assets/images/research.jpg') }}" alt="Lembur Mangrove Research"
+        class="img-fluid research-image">
+    </div>
+  </div>
+</div>
+
+
+<div class="cta-section">
+  <a href="https://wa.me/62817849463" class="btn btn-contact mb-3">
+    Chat Pak Deden di +62 817-849-463
+  </a>
+  <div class="contact-message">
+    <p>Email kami di <a href="mailto:hello@lemburmangrove.com">hello@lemburmangrove.com</a></p>
+  </div>
+</div>
 @endsection
-<!-- {{-- @endif
-@endauth --}} -->

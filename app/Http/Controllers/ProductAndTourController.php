@@ -46,8 +46,7 @@ class ProductAndTourController extends Controller
         $article->description = $request->textarea;
         $article->tags = $request->tags;
         $article->image = $imageName;
-        $article->lowprice = $request->lowprice;
-        $article->highprice = $request->highprice;
+        $article->price = $request->price;
         $article->penjelasan = $request->penjelasan;
         $article->ukuran = $request->ukuran;
         $article->save();
@@ -81,8 +80,7 @@ class ProductAndTourController extends Controller
         $article->title = $request->title;
         $article->description = $request->textarea;
         $article->tags = $request->tags;
-        $article->lowprice = $request->lowprice;
-        $article->highprice = $request->highprice;
+        $article->price = $request->price;
         $article->penjelasan = $request->penjelasan;
         $article->ukuran = $request->ukuran;
         $article->save();

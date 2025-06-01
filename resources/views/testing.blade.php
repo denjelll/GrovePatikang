@@ -20,6 +20,7 @@
       display: flex;
       flex-direction: column;
       background-image: none;
+      overflow-x: hidden;
     }
 
     .page-wrapper {

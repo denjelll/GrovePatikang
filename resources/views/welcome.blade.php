@@ -41,26 +41,9 @@
         
       }
 
-      .custom-navbar {
-        padding: 10px 0;
-      }
-
       .logo {
         height: 100px;
         width: auto;
-      }
-
-      .navbar-nav .nav-link {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #000;
-        margin: 0 15px;
-        text-transform: uppercase;
-      }
-
-      .navbar-nav .nav-link:hover {
-        color: #333;
-        text-decoration: none;
       }
 
       /* Auth Buttons in Hero Section */

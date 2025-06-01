@@ -159,7 +159,7 @@
                             <p>Deden <br>+62 817-849-463<br>Mon – Fri, 8:00-22:00</p>
                         </div>
                         <a href="https://wa.me/62817849463" class="btn btn-whatsapp" target="_blank">
-                            <i class="fa fa-whatsapp" style="font-size:30px;color:chocolate"></i> Click Here to Chat Us
+                            <i class="fa fa-whatsapp" style="font-size:20px;color:chocolate"></i> Click Here to Chat Us
                         </a>
                     </div>
                 </div>
@@ -167,9 +167,9 @@
                 <div class="col-lg-6">
                     <div class="element">
                         <h>Our Google Maps</h>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126315.20659509597!2d106.03367431949907!3d-6.431017295315212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4202b9dc91e187%3A0x18f89808f2e4cf06!2sPandeglang%20Regency%2C%20Banten!5e0!3m2!1sen!2sid!4v1677447108163!5m2!1sen!2sid"
-                            width="100%" height="332" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.904620435911!2d105.71353577475342!3d-6.533729093459018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e43b5efb1af5be5%3A0x572d51f010950f7c!2sLembur%20Mangrove%20Patikang!5e0!3m2!1sen!2sid!4v1748793577033!5m2!1sen!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>

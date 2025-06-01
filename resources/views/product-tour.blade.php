@@ -14,12 +14,10 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .container-fluid {
-            height: 100vh;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -135,20 +133,9 @@
                             <div class="product-title">
                                 {{ $post->title }}
                             </div>
-                            @if ($post->category_id == 1)
-                                <div class="product-price">
-                                    Rp{{ number_format($post->lowprice, 0, ',', '.') }} -
-                                    Rp{{ number_format($post->highprice, 0, ',', '.') }}
-                                </div>
-                            @elseif ($post->category_id == 2)
-                                <div class="product-price">
-                                    Rp{{ number_format($post->lowprice, 0, ',', '.') }}
-                                </div>
-                            @else
-                                <div class="product-price">
-                                    {{ $post->highprice ? 'Rp' . number_format($post->highprice, 0, ',', '.') : 'tbd' }}
-                                </div>
-                            @endif
+                            <div class="product-price">
+                                Rp {{ number_format($post->price, 0, ',', '.') }}
+                            </div>
                         </div>
                     @endforeach
                 </div>
