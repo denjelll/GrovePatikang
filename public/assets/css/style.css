@@ -20,7 +20,17 @@ html, body {
 
 /* ====== MAIN CONTENT AREA ====== */
 main {
-    flex: 1;
+    padding: 0 !important;
+    overflow-y: hidden;
+}
+
+.navigation-bar {
+    margin-bottom: 0;
+}
+
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 /* ====== UTILITIES ====== */

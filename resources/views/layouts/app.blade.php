@@ -23,68 +23,65 @@
     <link href="{{ URL::asset('assets/css/style.css') }}" type="text/css" rel="stylesheet">
 </head>
 <body>
-   {{-- <div id="title-atas">
-   <h1>UMNGrove</h1> <br>
-    <h6>Testing Website Template</h6>
-    <img src="{{ URL::asset('assets/images/image1.jpg')}}" alt="image logo"> --}}
-</div>
     <div class="navigation-bar">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #fcfce4; border-bottom: 1px solid black;">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url('/') }}" style= "margin-left: -70px;">
-                    <img src="{{ URL::to('/assets/images/logo-website.png') }}" alt="Logo" style="height: 100px; widht: auto;" class="logo">
-                  </a>
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #fcfce4; border-bottom: 1px solid black;">
+    <div class="container">
+        <!-- Wrapper Flex untuk Logo & Burger -->
+        <div class="d-flex justify-content-between align-items-center w-100 px-3">
+            <!-- Logo di kiri -->
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ URL::to('/assets/images/logo-website.png') }}" alt="Logo" style="height: 100px; width: auto;">
+            </a>
+
+            <!-- Burger menu di kanan -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ url('/') }}">
-                            Home
-                        </a>
-                        
-                @auth
-                    @if (auth()->user()->role == "admin")
-                        <a class="nav-link" href="{{ url('/informationpost') }}">Admin</a>
-                        <a class="nav-link" href="{{ url('/edit-productandtour') }}">Edit Product and Tour</a>
-                        <a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a>
-                        @else
-                        <a class="nav-link" href="{{ url('/editprofile') }}">Profil</a>
-                        <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
-                    @endif
-                @endauth
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
 
-                    @guest
-                        <a class="nav-link" href="/category/1">Product and Tour</a>
-                        <a class="nav-link" href="/category/2">News and Blog</a>
-                        <a class="nav-link" href="{{ url('/csr') }}">CSR Program</a>
-                        <a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a>
-                        <a class="nav-link" href="{{ url('/aboutus') }}">About us</a>
-                        <a class="nav-link" href="{{ url('/contactus') }}">Contact us</a>
-                </div>
-                    </li>
+                        @auth
+                            @if (auth()->user()->role == "admin")
+                                <a class="nav-link" href="{{ url('/informationpost') }}">Admin</a>
+                                <a class="nav-link" href="{{ url('/edit-productandtour') }}">Edit Product and Tour</a>
+                                <a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a>
+                            @else
+                                <a class="nav-link" href="{{ url('/editprofile') }}">Profil</a>
+                                <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
+                            @endif
+                        @endauth
+
+                        @guest
+                            <a class="nav-link" href="/category/1">Product and Tour</a>
+                            <a class="nav-link" href="/category/2">News and Blog</a>
+                            <a class="nav-link" href="{{ url('/csr') }}">CSR Program</a>
+                            <a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a>
+                            <a class="nav-link" href="{{ url('/aboutus') }}">About us</a>
+                            <a class="nav-link" href="{{ url('/contactus') }}">Contact us</a>
                         @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li> -->
-
+                            </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -98,17 +95,17 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+
+    <!-- Content -->
+    <main>
+        @yield('content')
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container text-center">
             <a href="https://www.instagram.com/umngrove" class="footer-link">Website by @umngrove</a>
-            {{-- <a href="#" class="footer-link">Refund Policy</a>
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Indikator Pengunjung</a> --}}
         </div>
     </footer>
 </body>

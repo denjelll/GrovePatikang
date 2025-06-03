@@ -38,7 +38,6 @@
         top: 0;
         background-color: #fcfce6;
         border-bottom: 1px solid #ddd;
-        
       }
 
       .logo {
@@ -55,8 +54,7 @@
         gap: 10px;
       }
 
-      .auth-buttons .btn-login,
-      .auth-buttons .btn-signup {
+      .auth-buttons .btn-login {
         padding: 8px 15px;
         font-size: 1rem;
         font-weight: bold;
@@ -77,31 +75,25 @@
         /* Warna hover lebih gelap */
       }
 
-      .auth-buttons .btn-signup {
-        background-color: #a65325;
-        /* Tombol putih */
-        color: white;
-        /* Teks oranye kecokelatan */
-        border: 2px solid #a65325;
-      }
-
-      .auth-buttons .btn-signup:hover {
-        background-color: #883e1a;
-        color: white;
-      }
-
       /* Hero Section */
       .hero-section {
         background: url("/assets/images/image1.jpg")no-repeat center center/cover;
-        height: 82vh;
+        height: 85vh;
         /* Full screen height */
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         padding-bottom: 30px;
+        margin-top: -24px;
       }
-
+      .hero-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      
       .login-btn {
         background-color: #a65325;
         color: white;
@@ -119,14 +111,6 @@
         color: white;
         text-decoration: none;
       }
-
-      .hero-section h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-      }
-
 
       .hero-overlay {
         position: relative;
@@ -155,9 +139,15 @@
 
       /* Visitor Indicator Section */
       .visitor-indicator-section {
-        background-image: linear-gradient(#fefae0, #A9B388);
-        padding: 60px 20px;
-        color: white;
+        background: url("/assets/images/image2.jpg")no-repeat center center/cover;
+        height: 85vh;
+        /* Full screen height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 30px;
+        margin-top: 10px;
       }
 
       .section-title {
@@ -404,7 +394,6 @@
         background-color: #A9B388;
         padding: 60px 20px;
         color: white;
-        margin-bottom: -60px;
       }
 
       .about-box {
@@ -565,7 +554,7 @@
 
     <section class="visitor-indicator-section">
         <div class="container">
-            <h2 class="section-title">Indikator Pengunjung</h2>
+            <!-- <h2 class="section-title">Indikator Pengunjung</h2> -->
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="indicator-item">
