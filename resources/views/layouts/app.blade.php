@@ -16,7 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -43,35 +43,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
 
                         @auth
                             @if (auth()->user()->role == "admin")
-                                <a class="nav-link" href="{{ url('/informationpost') }}">Admin</a>
-                                <a class="nav-link" href="{{ url('/edit-productandtour') }}">Edit Product and Tour</a>
-                                <a class="nav-link" href="{{ url('/edit-newsandblog') }}">Edit News and Blog</a>
-                            @else
-                                <a class="nav-link" href="{{ url('/editprofile') }}">Profil</a>
-                                <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/admin/dashboard') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/admin/productandtour') }}">Manage Product and Tour</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Manage News and Blog</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="{{ url('/informationpost') }}">Admin</a></li> -->
+                            <!-- <li class="nav-item"><a class="nav-link" href="{{ url('/editprofile') }}">Profil</a></li> -->
                             @endif
                         @endauth
 
                         @guest
-                            <a class="nav-link" href="/category/1">Product and Tour</a>
-                            <a class="nav-link" href="/category/2">News and Blog</a>
-                            <a class="nav-link" href="{{ url('/csr') }}">CSR Program</a>
-                            <a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a>
-                            <a class="nav-link" href="{{ url('/aboutus') }}">About us</a>
-                            <a class="nav-link" href="{{ url('/contactus') }}">Contact us</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('product-tour') }}">Product and Tour</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/category/3">News and Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/csr') }}">CSR Program</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/researchdedication') }}">Research and Dedication</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/aboutus') }}">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/contactus') }}">Contact us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

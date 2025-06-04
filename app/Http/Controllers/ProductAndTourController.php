@@ -10,16 +10,44 @@ use App\Models\Categories;
 
 class ProductAndTourController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categoryIds = Categories::whereIn('name', ['product', 'tour'])->pluck('id');
+        $search = $request->input('search');
+        $filterCategory = $request->input('category'); // expects category id
+        $sort = $request->input('sort'); // expects 'asc' or 'desc'
     
-        $articles = Articles::with('category')
-            ->whereIn('category_id', $categoryIds)
-            ->get();
+        // Ambil kategori product dan tour (case insensitive)
+        $categories = Categories::whereIn('name', ['product', 'tour'])->get();
+        $categoryIds = $categories->pluck('id')->toArray();
     
-        return view('auth.admin.productandtour', compact('articles'));
-    }    
+        $articlesQuery = Articles::with('category')
+            ->whereIn('category_id', $categoryIds);
+    
+        // Search di title dan tags
+        if ($search) {
+            $articlesQuery->where(function($query) use ($search) {
+                $query->where('title', 'like', "%{$search}%")
+                      ->orWhere('tags', 'like', "%{$search}%");
+            });
+        }
+    
+        // Filter kategori berdasarkan category_id (harus salah satu id product/tour)
+        if ($filterCategory && in_array($filterCategory, $categoryIds)) {
+            $articlesQuery->where('category_id', $filterCategory);
+        }
+    
+        // Sort berdasarkan harga jika ada dan valid
+        if ($sort && in_array(strtolower($sort), ['asc', 'desc'])) {
+            $articlesQuery->orderBy('price', $sort);
+        } else {
+            // default sort terbaru
+            $articlesQuery->latest();
+        }
+    
+        $articles = $articlesQuery->paginate(10)->withQueryString();
+    
+        return view('auth.admin.productandtour', compact('articles', 'categories', 'search', 'filterCategory', 'sort'));
+    }      
 
     public function create()
     {

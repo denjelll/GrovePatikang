@@ -88,10 +88,13 @@
         margin-top: -24px;
       }
       .hero-section h1 {
-        font-size: 3rem;
+        font-size: 5rem;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 10px;
+      }
+      .hero-overlay {
+        justify-content: center;
       }
       
       .login-btn {
@@ -112,9 +115,6 @@
         text-decoration: none;
       }
 
-      .hero-overlay {
-        position: relative;
-      }
 
       .subtitle {
         font-size: 1.5rem;
@@ -139,7 +139,7 @@
 
       /* Visitor Indicator Section */
       .visitor-indicator-section {
-        background: url("/assets/images/image2.jpg")no-repeat center center/cover;
+        background: url("/assets/images/image12.jpg")no-repeat center center/cover;
         height: 85vh;
         /* Full screen height */
         display: flex;
@@ -158,29 +158,28 @@
       }
 
       .indicator-item {
-        background-color: rgba(0, 0, 0, 0.6);
-        /* Semi-transparan hitam */
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
       }
 
-      .indicator-item p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        margin-bottom: 15px;
-      }
-
-      .indicator-item h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
+      .indicator-item .desc {
+        font-size: 2rem;
+        font-weight: 600;
         margin-bottom: 10px;
+        text-align: justify;
+      }
+
+      .indicator-item .figure {
+        font-size: 5rem;
+        font-weight: 900;
+        margin: 0;
       }
 
       .indicator-item .source {
+        font-weight: bold;
         font-size: 1rem;
-        font-style: italic;
-        color: #ddd;
+        margin-top: 5px;
       }
 
       /* Locals Grow Section */
@@ -248,9 +247,9 @@
 
       /* Collaboration Section */
       .collaboration-section {
-        background: url('images/mangrove-background.jpg') no-repeat center center/cover;
-        height: 300px;
-        /* Adjust the height based on your design */
+        background: url("/assets/images/image1.jpg")no-repeat center center/cover;
+        height: 25vh;
+        /* Full screen height */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -292,12 +291,13 @@
       }
 
       .partner-logo.umn-logo {
-      width: 110px;
-      height: auto;
+        width: 110px;
+        height: auto;
       }
 
       .partner-logo.umngrove-logo {
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         height: auto;
       }
 
@@ -553,26 +553,20 @@
     </section>
 
     <section class="visitor-indicator-section">
-        <div class="container">
-            <!-- <h2 class="section-title">Indikator Pengunjung</h2> -->
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="indicator-item">
-                        <p>Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia di Banten dengan luas hingga</p>
-                        <h1>4.081,17 hektar</h1>
-                        <p class="source">(Sumber, 2024)</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="indicator-item">
-                        <p>Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia di Banten dengan luas hingga</p>
-                        <h1>4.081,17 hektar</h1>
-                        <p class="source">(Sumber, 2024)</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="indicator-item text-center">
+          <p class="desc">
+          Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten yang luasnya mencapai           </p>
+          <h1 class="figure">4.081,17 hektare</h1>
+          <p class="source">(Sumber, 2024)</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section class="locals-grow-section">
         <div class="container text-center">
@@ -659,26 +653,27 @@
         <div class="container text-center">
             <div class="row justify-content-center align-items-center mb-4">
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/exciting-banten-logo.png') }}" alt="Exciting Banten" class="partner-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/exciting-banten-logo.png') }}" alt="Exciting Banten" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/chandra-asri-logo.png') }}" alt="Chandra Asri" class="partner-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/chandra-asri-logo.png') }}" alt="Chandra Asri" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/pokdarwis-pandeglang-logo.png') }}" alt="Pokdarwis Pandeglang" class="partner-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/pokdarwis-pandeglang-logo.png') }}" alt="Pokdarwis Pandeglang" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/tourism-logo.png') }}" alt="Tourism Logo" class="partner-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/tourism-logo.png') }}" alt="Tourism Logo" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/kia-logo.png') }}" alt="KIA Logo" class="partner-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/kia-logo.png') }}" alt="KIA Logo" class="partner-logo" loading="lazy">
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/umn.png') }}" alt="UMN" class="partner-logo umn-logo" loading="lazy">
+                  <img src="{{ URL::to('/assets/images/umn.png') }}" alt="UMN" class="partner-logo umn-logo" loading="lazy">
                 </div>
-                <div class="col-lg-2 col-md-3 col-4">
-                    <img src="{{ URL::to('/assets/images/umngrove.png') }}" alt="umngrove" class="partner-logo umngrove-logo" loading="lazy">
+                <div class="col-lg-4 col-md-6 col-6">
+                  <img src="{{ URL::to('/assets/images/umngrove.png') }}" alt="umngrove" class="partner-logo umngrove-logo img-fluid" loading="lazy">
                 </div>
+
             </div>
             <div class="contact-message">
                 <p>Kindly contact us for collaboration at <a href="mailto:HELLO@LEMBURMANGROVE.com">HELLO@LEMBURMANGROVE.com</a></p>

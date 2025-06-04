@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
 body {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     background-color: #fefae0;
 }
 
@@ -46,7 +45,6 @@ body {
     background: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -94,11 +92,12 @@ body {
 
 /* CTA */
 .cta-section {
-    background: url("{{ asset('assets/images/frame-44.png') }}") no-repeat center center/cover;
+    background: url("{{ asset('assets/images/frame-44.jpg') }}") no-repeat center center/cover;
     padding: 60px 20px;
     color: white;
     text-align: center;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin-top: 3rem;
 }
 
