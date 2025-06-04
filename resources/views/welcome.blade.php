@@ -88,7 +88,7 @@
         margin-top: -24px;
       }
       .hero-section h1 {
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -139,39 +139,33 @@
 
       /* Visitor Indicator Section */
       .visitor-indicator-section {
-        background: url("/assets/images/image12.jpg")no-repeat center center/cover;
-        height: 85vh;
-        /* Full screen height */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        padding-bottom: 30px;
-        margin-top: 10px;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #000;
-        margin-bottom: 20px;
+        background-color: #A9B388;
+        padding: 60px 0;
       }
 
       .indicator-item {
+        background-color: rgba(0, 0, 0, 0.4); /* Hanya untuk box ini */
+        border-radius: 15px;
         color: white;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        padding: 20px;
+        padding: 30px;
+        margin: 10px 0;
+        transition: transform 0.3s ease;
+      }
+
+      .indicator-item:hover {
+        transform: translateY(-5px);
       }
 
       .indicator-item .desc {
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 600;
         margin-bottom: 10px;
         text-align: justify;
       }
 
       .indicator-item .figure {
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 900;
         margin: 0;
       }
@@ -553,20 +547,32 @@
     </section>
 
     <section class="visitor-indicator-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="indicator-item text-center">
           <p class="desc">
           Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten yang luasnya mencapai           </p>
           <h1 class="figure">4.081,17 hektare</h1>
-          <p class="source">(Sumber, 2024)</p>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="indicator-item text-center">
+              <p class="desc">
+                Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten.
+              </p>
+              <h1 class="figure">4.081,17 hektare</h1>
+              <p class="source">(Incoma, 2024)</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="indicator-item text-center">
+              <p class="desc">
+                Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten.
+              </p>
+              <h1 class="figure">4.081,17 hektare</h1>
+              <p class="source">(Incoma, 2024)</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <section class="locals-grow-section">
         <div class="container text-center">
@@ -586,7 +592,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
-                        <img src="{{ URL::to('/assets/images/mangrove-products.jpg') }}" alt="Mangrove Products" class="img-fluid rounded" loading="lazy">
+                        <img src="{{ URL::to('/assets/images/syrupMangrove.jpg') }}" alt="Mangrove Products" class="img-fluid rounded" loading="lazy">
                         <a href="/category/1" style="text-decoration: none;"> <h3> Mangrove Products </h3> </a>
                         <p>
                             Program CSR perusahaan dalam perlindungan lingkungan di pesisir yang dapat meningkatkan daya beli masyarakat sekitar.
@@ -711,10 +717,10 @@
                     <div class="about-box text-white">
                         <h2>About Us</h2>
                         <p>
-                            <i class="fas fa-map-marker-alt"></i>Kampung Patikang, Desa Citeureup, Panimbang, Pandeglang, Banten, Indonesia
+                          Kampung Patikang, Desa Citeureup, Panimbang, Pandeglang, Banten, Indonesia
                         </p>
                         <p>
-                            <i class="fas fa-phone-alt"></i> Deden: +62 817-849-463<br>Mon – Fri, 8:00-22:00
+                          Deden: +62 817-849-463<br>Mon – Fri, 8:00-22:00
                         </p>
                     </div>
                 </div>

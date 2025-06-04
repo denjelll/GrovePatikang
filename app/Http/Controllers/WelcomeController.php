@@ -70,10 +70,10 @@ class WelcomeController extends Controller
     public function productTour()
     {
         // Ambil data dari category_id 1 (Tour Packages) dan 2 (Product)
-        $posts = Articles::with('category')->whereIn('category_id', [1, 2])->get();
+        $posts = Articles::with('category')->whereIn('category_id', [1, 2])->paginate(10);
     
         return view('product-tour', ['posts' => $posts]);
-    }
+    }    
     
     public function newsAndBlog()
     {

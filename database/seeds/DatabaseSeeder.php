@@ -24,29 +24,34 @@ class DatabaseSeeder extends Seeder
                 ]);
                 DB::table('articles')->insert([
                     ["user_id" => "1",
-                     "category_id"=>"2",
-                     "title"=>"Eksplorasi Mangrove",
-                     "description"=>"Ikuti tur berpemandu untuk menjelajahi hutan mangrove, belajar tentang keanekaragaman hayati, dan memahami pentingnya konservasi mangrove.",
-                     "image"=>"explorasi-mangrove.jpg",
+                     "category_id"=>"1",
+                     "title"=>"Fresh Mangrove Syrup",
+                     "description"=>"The syrup made from the seeds of mangrove tree fruit has benefits for treating heatiness, mouth ulcers, preventing flu, and maintaining body stability. Therefore, a lot of people are hunting for this drink. Although it tastes a bit foreign to some people as a type of syrup drink, but because of its efficacy, this syrup is still used as an alternative drink. Mangrove syrup is taken from mangrove seeds without damaging the beachside plants. Mangrove syrup is made without preservatives and harmful chemicals. This mangrove syrup is perfect to enjoy during hot weather by adding it to cold water or water with ice cubes. Not only is it delicious as a cold drink with ice cubes, this mangrove syrup is also suitable if you want to combine or make other drinks, such as mixed fruit ice. Each bottle contains 350 ml of syrup which is enough to make 20 glasses of fresh drinks. Each order of Mangrove Syrup is packaged with exclusive packaging, which will not only keep the glass bottle intact, but is also suitable if you want to make a gift or present for those closest to you. The way to serve this mangrove syrup is quite simple, namely:",
+                     "image"=>"syrupMangrove.jpg",
+                     "price"=>"15000",
+                     "ukuran"=>"Medium (350 ml) and Large (600 ml)",
                      "created_at"=>"2025-06-01 06:20:19",
                      "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
                 DB::table('articles')->insert([
                     ["user_id" => "1",
-                     "category_id"=>"2",
-                     "title"=>"Petualangan Laut",
-                     "description"=>"Rasakan ketenangan alam laut dan hutan mangrove, cocok untuk pecinta alam dan fotografi. Ada juga paket snorkeling dan lainnya untuk pecinta laut.",
-                     "image"=>"petualangan-laut.jpg",
+                     "category_id"=>"1",
+                     "title"=>"Dodol Mangrove",
+                     "description"=>"Experience the authentic taste of Patikang Village with Dodol Mangrove Patikang, a traditional delicacy made from locally harvested mangrove fruit. This sweet treat offers a distinctive flavor profile that captures the natural richness of mangroves, infused with a perfect balance of sweetness and tanginess. Not just a delicious snack, Dodol Mangrove is also packed with health benefits. It contains antioxidants and is rich in vitamin C, making it a guilt-free indulgence that supports your well-being. Lovingly made by the skilled hands of Patikang Village’s community, this dodol is a true testament to the harmony between tradition, nature, and health. There are many ways to enjoy this mangrove jam, namely:",
+                     "image"=>"dodol.jpg",
+                     "price"=>"15000",
+                     "ukuran"=>"",
                      "created_at"=>"2025-06-01 06:20:19",
                      "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
                 DB::table('articles')->insert([
                     ["user_id" => "1",
-                     "category_id"=>"2",
-                     "title"=>"Pengalaman Edukasi",
-                     "description"=>"Ambil bagian dalam kegiatan seperti penanaman mangrove dan pelatihan tentang praktik berkelanjutan yang mendukung lingkungan dan masyarakat.",
-                     "image"=>"pengalaman-edukasi.jpg",
-                     "tags"=>"#laut #pencinta alam #petualangan #snorkeling",
+                     "category_id"=>"1",
+                     "title"=>"Handicraft Miniature Rhino Carving",
+                     "description"=>"Discover the artistry and charm of the Handicraft Miniature Rhinoceros, a beautiful representation of creativity and culture. These miniatures are available in two unique variations—carved and uncarved—each offering its own distinct appeal. Whether you're drawn to the intricate details of the carved version or the simplicity and raw beauty of the uncarved one, these pieces make a perfect addition to your collection or a meaningful gift for someone special. The carved miniatures showcase exceptional craftsmanship, with intricate patterns and designs meticulously etched by skilled artisans. Each piece tells a story, reflecting the traditions and artistic heritage of the community that creates them. On the other hand, the uncarved miniatures are a testament to the natural beauty of the materials used, highlighting their smooth surfaces and organic shapes. These pieces celebrate minimalism and allow the elegance of the rhino’s form to speak for itself. Both variations serve as more than just decorative items—they are symbols of conservation and awareness. Representing the endangered rhinoceros, these miniatures remind us of the importance of protecting wildlife and preserving our planet's biodiversity. Every purchase supports local artisans and contributes to sustaining traditional craftsmanship while spreading a message of care for nature. Bring home a piece of art that combines tradition, creativity, and meaning. Whether carved or uncarved, the Handicraft Miniature Rhinoceros is a timeless treasure to cherish.",
+                     "image"=>"Rhino.jpg",
+                     "price"=>"150000",
+                     "ukuran"=>"Carved dan Uncarved",
                      "created_at"=>"2025-06-01 06:20:19",
                      "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
