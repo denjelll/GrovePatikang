@@ -55,6 +55,39 @@ class DatabaseSeeder extends Seeder
                      "created_at"=>"2025-06-01 06:20:19",
                      "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
+                DB::table('articles')->insert([
+                    ["user_id" => "1",
+                     "category_id"=>"2",
+                     "title"=>"Liwungan Island Snorkeling Package",
+                     "description"=>"Snorkeling Package: Explore the Beauty of Liwungan IslandExperience an unforgettable adventure to Liwungan Island with our Snorkeling Package! Perfect for groups of 15 or more, this package offers the perfect combination of relaxation, exploration, and fun—all for just IDR 120,000/person. What’s Included? ✔️ Boat Transfer – Enjoy a scenic journey to the island.✔️ Snorkeling Gear – Quality equipment for the best underwater experience.✔️ Life Jacket – Stay safe and comfortable in the water.✔️ Lunch Box – A delicious meal to keep you energized.✔️ Coffee & Mineral Water – Refreshments to keep you hydrated.✔️ Fish Food – Feed and interact with colorful marine life.✔️ Fresh Fruits – Enjoy tropical fruit for a refreshing treat.✔️ Guide – An experienced guide to make your trip smooth and enjoyable. Flexible Itinerary The trip schedule will be tailored to suit your group’s needs and preferences, ensuring a personalized and satisfying experience. Book now and create unforgettable memories at Liwungan Island!",
+                     "image"=>"paketSnorke.jpg",
+                     "price"=>"150000",
+                     "penjelasan"=>"Dive into crystal-clear waters and explore vibrant marine life with our all-inclusive Liwungan Island Snorkeling Trip.",
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
+                ]);
+                DB::table('articles')->insert([
+                    ["user_id" => "1",
+                     "category_id"=>"2",
+                     "title"=>"Open Trip Climate Action",
+                     "description"=>"Embark on an unforgettable journey with the Open Climate Trip, where you’ll connect with nature while supporting eco-conscious travel. Choose your preferred meeting point—Serang for IDR 250,000/person or Citereup for IDR 150,000/person—and get ready for an enriching experience that combines adventure, sustainability, and fun. This trip is designed for those who want to explore the environment in an eco-friendly way, offering a refreshing escape from the hustle and bustle. Whether you're a nature enthusiast or someone looking to unwind, the Open Climate Trip promises a memorable experience at a great value. Book your spot today and take part in this exciting adventure that’s as good for the planet as it is for your soul!",
+                     "image"=>"openTrip2.jpg",
+                     "price"=>"150000",
+                     "penjelasan"=>"A trip for the soul, the man and the world.",
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
+                ]);
+                DB::table('articles')->insert([
+                    ["user_id" => "1",
+                     "category_id"=>"2",
+                     "title"=>"School Educational Tour Package",
+                     "description"=>"The syrup made from the seeds of mangrove tree fruit has benefits for treating heatiness, mouth ulcers, preventing flu, and maintaining body stability. Therefore, a lot of people are hunting for this drink. Although it tastes a bit foreign to some people as a type of syrup drink, but because of its efficacy, this syrup is still used as an alternative drink. Mangrove syrup is taken from mangrove seeds without damaging the beachside plants. Mangrove syrup is made without preservatives and harmful chemicals. This mangrove syrup is perfect to enjoy during hot weather by adding it to cold water or water with ice cubes. Not only is it delicious as a cold drink with ice cubes, this mangrove syrup is also suitable if you want to combine or make other drinks, such as mixed fruit ice. Each bottle contains 350 ml of syrup which is enough to make 20 glasses of fresh drinks. Each order of Mangrove Syrup is packaged with exclusive packaging, which will not only keep the glass bottle intact, but is also suitable if you want to make a gift or present for those closest to you. The way to serve this mangrove syrup is quite simple, namely:",
+                     "image"=>"paketEdukasi 2.jpg",
+                     "price"=>"12000",
+                     "penjelasan"=>"A syrup made from the seeds of the mangrove tree.",
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
+                ]);
 
         Schema::enableForeignKeyConstraints();
 

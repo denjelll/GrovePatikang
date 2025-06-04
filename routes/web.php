@@ -23,6 +23,7 @@ Route::get('/editprofile', 'HomeController@profile')->name('admin.profil');
 Route::post('/editedprofile', 'HomeController@editedprofile')->name('editedprofil');
 Route::get('/artikel', 'HomeController@blog')->name('artikel.index');
 Route::get('/artikel/create', 'HomeController@create')->name('createblog');
+Route::get('/admin/blog', [BlogController::class, 'index'])->name('auth.admin.blog');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/createblog', [BlogController::class, 'create'])->name('createblog');
 Route::post('/storeblog', [BlogController::class, 'store'])->name('storeblog');

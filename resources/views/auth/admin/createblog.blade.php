@@ -31,11 +31,6 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="tags" class="form-label fw-semibold">Tags</label>
-                    <input type="text" class="form-control" name="tags" id="tags">
-                </div>
-
-                <div class="mb-3">
                     <label for="category_id" class="form-label fw-semibold">Category</label>
                     <select name="category_id" class="form-select" id="category_id" required>
                         <option value="" disabled selected>Choose Category</option>
@@ -46,8 +41,23 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="textarea" class="form-label fw-semibold">Content</label>
+                    <textarea class="form-control" name="textarea" id="textarea" rows="5" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tags" class="form-label fw-semibold">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="tags">
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label fw-semibold">Image</label>
                     <input type="file" class="form-control" name="image" id="image" accept="image/*">
+                </div>
+
+                <div class="mb-3">
+                    <label for="penjelasan" class="form-label fw-semibold">Excerpt / Highlight</label>
+                    <textarea class="form-control" name="penjelasan" id="penjelasan" rows="3"></textarea>
                 </div>
 
                 <div class="d-flex justify-content-end">

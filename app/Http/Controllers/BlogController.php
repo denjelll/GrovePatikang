@@ -34,7 +34,10 @@ class BlogController extends Controller
             'title' => $request->title,
             'tags' => $request->tags,
             'category_id' => $request->category_id,
-            'image' => $imageName,
+            'description' => $request->textarea,
+            'image' => $imageName, // asumsi kamu upload gambar
+            'penjelasan' => $request->penjelasan,
+            'user_id' => Auth::id(), // <- ini penting!
         ]);
 
         return redirect()->route('auth.admin.blog')->with('message', 'Blog/News berhasil ditambahkan.');

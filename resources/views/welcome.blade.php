@@ -137,44 +137,81 @@
         color: #a65325;
       }
 
-      /* Visitor Indicator Section */
-      .visitor-indicator-section {
-        background-color: #A9B388;
-        padding: 60px 0;
-      }
+/* Visitor Indicator Section */
+.visitor-indicator-section {
+  background-color: #A9B388;
+  padding: 60px 0;
+}
 
-      .indicator-item {
-        background-color: rgba(0, 0, 0, 0.4); /* Hanya untuk box ini */
-        border-radius: 15px;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        padding: 30px;
-        margin: 10px 0;
-        transition: transform 0.3s ease;
-      }
+.indicator-item {
+  background-color: rgba(0, 0, 0, 0.4); /* Hanya untuk box ini */
+  border-radius: 15px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+}
 
-      .indicator-item:hover {
-        transform: translateY(-5px);
-      }
+.indicator-item:hover {
+  transform: translateY(-5px);
+}
 
-      .indicator-item .desc {
-        font-size: 1.7rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        text-align: justify;
-      }
+.indicator-item .desc {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: justify;
+}
 
-      .indicator-item .figure {
-        font-size: 3rem;
-        font-weight: 900;
-        margin: 0;
-      }
+.indicator-item .figure {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}
 
-      .indicator-item .source {
-        font-weight: bold;
-        font-size: 1rem;
-        margin-top: 5px;
-      }
+.indicator-item .source {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Responsive for Mobile Devices */
+@media (max-width: 576px) {
+  .visitor-indicator-section {
+    padding: 30px 15px;
+  }
+
+  .indicator-item {
+    padding: 20px;
+    margin: 5px 0;
+    text-align: left;
+  }
+
+  .indicator-item .desc {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    text-align: justify;
+  }
+
+  .indicator-item .figure {
+    font-size: 2rem;
+  }
+
+  .indicator-item .source {
+    font-size: 0.9rem;
+    margin-top: 3px;
+  }
+
+  /* Tambahan agar semua elemen menempel rapat */
+  .indicator-item .desc,
+  .indicator-item .figure,
+  .indicator-item .source {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 
       /* Locals Grow Section */
       .locals-grow-section {
@@ -561,10 +598,10 @@
           <div class="col-md-6">
             <div class="indicator-item text-center">
               <p class="desc">
-                Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten.
+                 Hutan mangrove merupakan salah satu ekosistem paling penting di wilayah pesisir, namun kondisinya di Indonesia mengalami penyusutan sehingga tersisa
               </p>
-              <h1 class="figure">4.081,17 hektare</h1>
-              <p class="source">(Incoma, 2024)</p>
+              <h1 class="figure">3,3 juta hektare</h1>
+              <p class="source">(Journal of Marine Estuarine Science, 2025)</p>
             </div>
           </div>
         </div>
