@@ -547,9 +547,6 @@
     </section>
 
     <section class="visitor-indicator-section">
-          <p class="desc">
-          Indonesia memiliki salah satu wilayah hutan mangrove terluas di dunia, dengan sebagian besar di antaranya berada di Banten yang luasnya mencapai           </p>
-          <h1 class="figure">4.081,17 hektare</h1>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
