@@ -88,7 +88,26 @@ class DatabaseSeeder extends Seeder
                      "created_at"=>"2025-06-01 06:20:19",
                      "updated_at"=>"2025-06-01 06:20:19"]
                 ]);
-
+                DB::table('articles')->insert([
+                    ["user_id" => "1",
+                     "category_id"=>"3",
+                     "title"=>"World Mangrove Day 2023 PT Chandra Asri Tanam Mangrove Bersama Jurnalis",
+                     "description"=>"PT Chandra Asri Petrochemical Tbk bersama Jurnalis Banten melaksanakan kegiatan penanaman pohon mangrove (Rhizopora SP) di wilayah kawasan Lembur Mangrove, Desa Citeureup, Kecamatan Panimbang, Kabupaten Pandeglang. Penanaman tersebut dilakukan dalam rangka memperingati Hari Mangrove Sedunia yang jatuh pada tanggal 26 Juni 2023. Penanaman Mangrove dilaksanakan sebagai upaya mendukung dekarbonisasi dengan memaksimalkan blue carbon atau karbon yang diserap, disimpan, dan dilepaskan menjadi cadangan oleh ekosistem pesisir dan laut. Corporate Communication Manager PT Chandra Asri Santi mengatakan, kegiatan tersebut untuk menjaga dan mempertahankan ekosistem hutan mangrove di lembur mangrove wilayah Desa Citeureup Kecamatan Panimbang Kabupaten Pandeglang. “Kegiatan ini merupakan wujud kepedulian dan perhatian bersama antara Pt Candra Asih, Jurnalis Banten, serta Pemerintah Desa. Ini dalam rangka menjaga konservasi tanaman mangrove. Kedepannya semoga kegiatan ini tetap berjalan, sehingga keberadaan hutan mangrove tetap lestari,” Ucap Shanti. Sementara itu Ketua Pokdarwis Putri Gundul Deden Sudiana menyampaikan terimakasih kepada PT Chandra Asri Petrochemical Tbk bersama Jurnalis Banten atas kerjasamanya dalam rangka penamanan mangrove ini. “Bahwa dalam rangka Hari Menanam Mangrove Sedunia dengan tema World Mangrove Day 2023 diharapkan kedepannya kegiatan ini bisa dilakukan dan didukung oleh semua pihak, agar ekosistem hutan Mangrove tetap lestari dan bermanfaat bagi semua pihak,” jelasnya.",
+                     "image"=>"news1.webp",
+                     "tags"=>"#ecowisata #penanaman #worldmangroveday",
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
+                ]);
+                DB::table('articles')->insert([
+                    ["user_id" => "1",
+                     "category_id"=>"3",
+                     "title"=>"4 Must-Visit Natural Attractions in Banten!",
+                     "description"=>"Lembur Mangrove Patikang If you're into ecotourism and want to explore nature's wonders, Lembur Mangrove Patikang in Pandeglang is a must-visit. Located in Desa Citeureup, Panimbang District, this area was once a swamp near the Citeureup river estuary. Today, it has transformed into a 4-hectare mangrove forest thanks to the hard work of the local community dedicated to environmental conservation and sustainable practices. The name Lembur Mangrove Patikang comes from the local Patikang village, and since 2017, the community’s tourism awareness group (Pokdarwis) has been working to make this place an eco-friendly destination. Located in the buffer zone of the Tanjung Lesung Special Economic Zone (KEK), this area is famous for its natural resources, making it perfect for ecotourism development. One of the main attractions here is the educational experience. Visitors can learn about mangrove conservation by planting mangrove trees along the beach, a fun activity that not only helps protect the environment but also encourages local participation in ecotourism. The mangrove forest is home to various species like Avicennia, Rhizophora, and Sonneratia, thriving in this unique ecosystem. For those looking for more adventure, exploring the mangrove forest by canoe is a fantastic way to immerse yourself in nature. Paddling through waterways surrounded by lush greenery while observing birdlife and other wildlife offers a calming, nature-filled experience. This is the perfect getaway to escape city life, providing a perfect balance of adventure and tranquility. The best part? Lembur Mangrove Patikang is completely free to visit! Besides being a tourist attraction, it also provides a source of income for the local community. The village not only produces mangrove seedlings but also offers food and beverages made from mangrove products, adding an authentic and sustainable touch to the travel experience. ",
+                     "image"=>"news2.JPG",
+                     "tags"=>"#ecowisata #penanaman #worldmangroveday",
+                     "created_at"=>"2025-06-01 06:20:19",
+                     "updated_at"=>"2025-06-01 06:20:19"]
+                ]);
         Schema::enableForeignKeyConstraints();
 
     }

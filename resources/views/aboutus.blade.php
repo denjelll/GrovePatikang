@@ -274,7 +274,7 @@
     <h1><strong>What We Offer?</strong></h1>
     <div class="row mt-4">
       @foreach ($post as $item)
-        @if ($item->category_id == 5)
+        @if ($item->category_id == 2)
           <div class="col-lg-4 col-md-6 mb-4 d-flex">
             <div class="offer-card">
               <img src="{{ URL::to('/assets/images/' . $item->image) }}" alt="{{ $item->title }}" class="img-fluid rounded">

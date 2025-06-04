@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\DB;
 class WelcomeController extends Controller
 {
     public function indexshow(){
-        $post = articles::where('Category_id',2)->get();
-        return view('welcome',['post'=>$post]);
+        $post = Articles::whereIn('category_id', [3, 4])->latest()->take(3)->get();
+        return view('welcome', compact('post'));
     }
     public function aboutus(){
-        $post = articles::where('category_id', 4)->get(); // Fetch posts with category_id 4
+        $post = articles::where('category_id', 2)->get(); // Fetch posts with category_id 4
         return view('aboutus', ['post' => $post]);
     }
 

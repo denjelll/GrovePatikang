@@ -235,7 +235,7 @@
       }
 
       .locals-card {
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.4);
         padding: 16px;
         border-radius: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -725,7 +725,7 @@
         <div class="container">
             <h2 class="section-title text-center">Our Latest Blogs & News</h2>
             <div class="row mt-4">
-                @foreach ($post->where('category_id', 2)->take(3) as $post)
+                @foreach ($post->whereIn('category_id', [3, 4])->take(3) as $post)
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog-card">
                             <img src="{{ URL::to('/assets/images/'.$post->image) }}" alt="{{ $post->title }}" class="img-fluid rounded" loading="lazy">
