@@ -38,16 +38,13 @@ The website serves as a platform to:
 
 - **Home Page**: Dynamic insights into eco-tourism, products, and mangrove benefits.
 - **About Us**: Highlights the initiative's mission, vision, and contributors.
-- **Category Pages**:
-  - **Contact**: Easy access to reach out to the team.
-  - **Payment Gateway**: Simplified booking and donation process.
-  - **Products and Tours**: Details on local goods and eco-tourism activities.
-  - **News & Blogs**: Updates on conservation efforts and local stories.
-  - **Visitor Indicators**: Real-time statistics on engagement and visits.
+- **Contact**: Easy access to reach out to the team.
+- **Payment Gateway**: Simplified booking and donation process.
+- **Products and Tours**: Details on local goods and eco-tourism activities.
+- **News & Blogs**: Updates on conservation efforts and local stories.
 - **User Management**:
   - **Admin**: Comprehensive control of the site.
   - **Guests**: Limited access to browse content and learn about the initiative.
-
 ---
 
 ## 🛠️ **Technology Stack**
