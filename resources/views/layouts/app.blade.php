@@ -75,7 +75,7 @@
                             @if (auth()->user()->role == "admin")
                                 <li class="nav-item"><a class="nav-link" href="{{ url('/admin/dashboard') }}">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ url('/admin/productandtour') }}">Manage Product and Tour</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/blog') }}">Manage News and Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ url('/admin/blog') }}">Manage News and Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('admin.change-password') }}">Change Password</a></li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
