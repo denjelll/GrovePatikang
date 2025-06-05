@@ -24,26 +24,26 @@ Route::get('/editprofile', 'HomeController@profile')->name('admin.profil');
 Route::post('/editedprofile', 'HomeController@editedprofile')->name('editedprofil');
 Route::get('/artikel', 'HomeController@blog')->name('artikel.index');
 Route::get('/artikel/create', 'HomeController@create')->name('createblog');
-Route::get('/admin/blog', [BlogController::class, 'index'])->name('auth.admin.blog');
-Route::get('/createblog', [BlogController::class, 'create'])->name('createblog');
-Route::post('/storeblog', [BlogController::class, 'store'])->name('storeblog');
-Route::get('/editblog/{id}', [BlogController::class, 'edit'])->name('editblog');
-Route::put('/updateblog/{id}', [BlogController::class, 'update'])->name('updateblog');
-Route::delete('/deleteblog/{id}', [BlogController::class, 'destroy'])->name('deleteblog');
-Route::get('/admin/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour');
-Route::get('/admin/productandtour/create', [ProductAndTourController::class, 'create'])->name('createproductandtour');
-Route::post('/admin/productandtour/store', [ProductAndTourController::class, 'store'])->name('storeproductandtour');
-Route::get('/admin/productandtour/edit/{id}', [ProductAndTourController::class, 'edit'])->name('editproductandtour');
-Route::put('/admin/productandtour/update/{id}', [ProductAndTourController::class, 'update'])->name('updateproductandtour');
-Route::delete('/admin/productandtour/delete/{id}', [ProductAndTourController::class, 'destroy'])->name('deleteproductandtour');
 Route::get('/edituser','HomeController@edituser')->name('edituser');
 Route::get('/deleteduser/{id}','HomeController@deleteduser')->name('deleteduser');
 Route::get('/informationpost', 'HomeController@informationpost')->name('informationpost');
 Route::get('/informationuser/{id}','HomeController@informationuser')->name('informationuser');
 Route::get('/redirect', 'HomeController@redirect')->middleware('auth');
-Route::get('/admin/dashboard', 'HomeController@adminDashboard')
-    ->name('admin.dashboard')
-    ->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/blog', [BlogController::class, 'index'])->name('auth.admin.blog');
+    Route::get('/createblog', [BlogController::class, 'create'])->name('createblog');
+    Route::post('/storeblog', [BlogController::class, 'store'])->name('storeblog');
+    Route::get('/editblog/{id}', [BlogController::class, 'edit'])->name('editblog');
+    Route::put('/updateblog/{id}', [BlogController::class, 'update'])->name('updateblog');
+    Route::delete('/deleteblog/{id}', [BlogController::class, 'destroy'])->name('deleteblog');
+    Route::get('/admin/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour');
+    Route::get('/admin/productandtour/create', [ProductAndTourController::class, 'create'])->name('createproductandtour');
+    Route::post('/admin/productandtour/store', [ProductAndTourController::class, 'store'])->name('storeproductandtour');
+    Route::get('/admin/productandtour/edit/{id}', [ProductAndTourController::class, 'edit'])->name('editproductandtour');
+    Route::put('/admin/productandtour/update/{id}', [ProductAndTourController::class, 'update'])->name('updateproductandtour');
+    Route::delete('/admin/productandtour/delete/{id}', [ProductAndTourController::class, 'destroy'])->name('deleteproductandtour');
+    Route::get('/admin/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard');
+});
 
 Route::get('/', 'WelcomeController@indexshow')->name('homeshow');
 Route::get('/aboutus', 'WelcomeController@aboutus')->name('aboutus');
