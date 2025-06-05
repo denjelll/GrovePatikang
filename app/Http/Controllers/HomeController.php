@@ -207,4 +207,29 @@ class HomeController extends Controller
     {
         return view('auth.admin.dashboard');
     }
+
+    public function changePassword()
+    {
+        return view('auth.admin.change-password');
+    }
+    
+    // Proses ganti password
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+    
+        $user = Auth::user();
+    
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->with('error', 'Password lama salah.');
+        }
+    
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+    
+        return back()->with('success', 'Password berhasil diubah.');
+    }
 }   

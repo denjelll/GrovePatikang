@@ -74,14 +74,16 @@
     line-height: 1.8;
     font-size: 1.1rem;
     color: #333;
+    text-align: justify;
   }
 
   .info-box {
     background-color: #4b634e;
     color: #fefae0;
-    padding: 50px 20px;
+    padding: 50px 25px;
     border-radius: 8px;
     height: 100%;
+    box-sizing: border-box
   }
 
   .info-box h3 {
@@ -100,6 +102,20 @@
   .info-box li {
     margin-bottom: 10px;
     font-size: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .info-box {
+      padding: 60px 60px;
+    }
+
+    .info-box h3 {
+      font-size: 2rem;
+    }
+
+    .info-box li {
+      font-size: 1.5rem;
+    }
   }
 
   .img-fluid {
@@ -131,6 +147,7 @@
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 15px;
+    text-align: justify;
   }
 
   .offer-section {
@@ -150,6 +167,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: justify;
   }
 
   .offer-card:hover {
@@ -284,7 +302,7 @@
               <p>
                 {{ \Illuminate\Support\Str::limit($item->description, 100) }}
                 @if (strlen($item->description) > 100)
-                  <a href="/post/{{ $item->id }}" class="text-decoration-none"> Read More</a>
+                  <a href="/post/{{ $item->id }}" class="text-decoration-none"> Baca selengkapnya</a>
                 @endif
               </p>
             </div>

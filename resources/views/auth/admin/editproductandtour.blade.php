@@ -36,13 +36,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="lowprice">Low Price</label>
-            <input type="number" class="form-control" name="lowprice" value="{{ $article->lowprice }}">
-        </div>
-
-        <div class="mb-3">
-            <label for="highprice">High Price</label>
-            <input type="number" class="form-control" name="highprice" value="{{ $article->highprice }}">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" name="price" value="{{ $article->price }}">
         </div>
 
         <div class="mb-3">

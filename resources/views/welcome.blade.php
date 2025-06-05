@@ -573,7 +573,6 @@
             <div class="container text-center text-white">
                 <h1>Welcome To Patikang</h1>
                 <p class="subtitle">Lembur Mangrove, Desa Wisata Citeureup</p> 
-                <a href="" class="btn btn-primary">Look Out!</a>
                 <div class="social-icons mt-4">
                     <a href="https://www.instagram.com/lembur_mangrove_patikang" class="social-icon"><i class="bi bi-instagram"></i></a>
                     <a href="https://wa.me/+62817849463" class="social-icon"><i class="bi bi-whatsapp"></i></a>
@@ -618,18 +617,18 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
                         <img src="{{ URL::to('/assets/images/tour-packages.jpg') }}" alt="Tour Packages" class="img-fluid rounded" loading="lazy">
-                        <a href="/category/1" style="text-decoration: none;"> <h3>Tour Packages</h3> </a>
+                        <a href="/product-tour?search=&category=tour&sort=" style="text-decoration: none;"> <h3>Tour Packages</h3> </a>
                         <p>
-                            Paket Wisata lembur mangrove yang dengan konsep wisata edukasi, ekologi yang berkelanjutan bagi sosial ekonomi dan lingkungan.
+                          Paket Wisata lembur mangrove yang dengan konsep wisata edukasi, ekologi yang berkelanjutan bagi sosial ekonomi dan lingkungan.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="locals-card">
                         <img src="{{ URL::to('/assets/images/syrupMangrove.jpg') }}" alt="Mangrove Products" class="img-fluid rounded" loading="lazy">
-                        <a href="/category/1" style="text-decoration: none;"> <h3> Mangrove Products </h3> </a>
+                        <a href="/product-tour?search=&category=product&sort=" style="text-decoration: none;"> <h3> Mangrove Products </h3> </a>
                         <p>
-                            Program CSR perusahaan dalam perlindungan lingkungan di pesisir yang dapat meningkatkan daya beli masyarakat sekitar.
+                          Membeli produk yang dihasilkan dari tanaman mangrove selain kayu dapat meningkatkan ekonomi masyarakat lokal.
                         </p>
                     </div>
                 </div>
@@ -638,8 +637,7 @@
                         <img src="{{ URL::to('/assets/images/csr-program.png') }}" alt="CSR Programs" class="img-fluid rounded">
                         <a href="{{ url('/csr')}}" style="text-decoration: none;"><h3>CSR Programs</h3></a>
                         <p>
-                            Membeli produk yang dihasilkan dari tanaman mangrove selain kayu dapat meningkatkan ekonomi masyarakat lokal.
-                        </p>
+                        Program CSR perusahaan dalam perlindungan lingkungan di pesisir yang dapat meningkatkan daya beli masyarakat sekitar.                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -647,7 +645,7 @@
                         <img src="{{ URL::to('/assets/images/research-dedication.jpg') }}" alt="Research and Dedication" class="img-fluid rounded" loading="lazy">
                         <a href="{{ url('/researchdedication')}}" style="text-decoration: none;"><h3>Research and Dedication</h3></a>
                         <p>
-                            Penelitian dan pengabdian akademisi sangat dibutuhkan dalam keberlangsungan kehidupan masyarakat sekitar.
+                          Penelitian dan pengabdian akademisi sangat dibutuhkan dalam keberlangsungan kehidupan masyarakat sekitar.
                         </p>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container py-4 blog-post-content">
-    <h2 class="text-center fw-bold mb-4 text-primary">{{ $category->name }}</h2>
+    <h2 class="text-center fw-bold mb-4 text-dark">{{ $category->name }}</h2>
     
     <div class="row">
         @foreach ($post as $item)
@@ -26,17 +26,17 @@
                         <p class="card-text text-muted flex-grow-1">
                             {!! \Illuminate\Support\Str::limit($item->description, 75, '') !!}
                             @if (strlen($item->description) > 75)
-                                <span id="dots">...<a href="/post/{{ $item->id }}" class="text-decoration-none text-primary">Read More</a></span>
+                                <span id="dots">...<a href="/post/{{ $item->id }}" class="text-decoration-none text-primary">Baca selengkapnya</a></span>
                             @endif
                         </p>
 
                         <div class="mt-auto pt-3">
-                            <p class="mb-1"><i>Category:</i> 
+                            <p class="mb-1"><i>Kategori:</i> 
                                 <a href="/category/{{ $item->category->id }}" class="text-decoration-none text-primary fw-medium">
                                     {{ $item->category->name }}
                                 </a>
                             </p>
-                            <a href="/post/{{ $item->id }}" class="btn btn-outline-primary btn-sm w-100 mt-2">📖 View Details</a>
+                            <a href="/post/{{ $item->id }}" class="btn btn-outline-primary btn-sm w-100 mt-2">Selengkapnya</a>
                         </div>
                     </div>
                 </div>

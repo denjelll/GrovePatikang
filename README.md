@@ -46,7 +46,6 @@ The website serves as a platform to:
   - **Visitor Indicators**: Real-time statistics on engagement and visits.
 - **User Management**:
   - **Admin**: Comprehensive control of the site.
-  - **Members**: Personalized dashboard and content creation tools.
   - **Guests**: Limited access to browse content and learn about the initiative.
 
 ---
@@ -58,7 +57,7 @@ The website serves as a platform to:
 - **Backend**: 
   - PHP 
 - **Framework**:
-  - Laravel 7
+  - Laravel 8.83.29
 - **Database**: 
   - MySQL
 - **Architecture**: 
@@ -71,7 +70,7 @@ The website serves as a platform to:
 ## ⚙️ **Installation and Setup**
 
 ### Prerequisites
-1. PHP (>=7.3)
+1. PHP (>=8.0)
 2. Composer
 3. Node.js and npm
 4. MySQL

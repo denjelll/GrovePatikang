@@ -67,13 +67,38 @@ class WelcomeController extends Controller
         return view('testing', ['post' => $post]);
     }
 
-    public function productTour()
+    public function productTour(Request $request)
     {
-        // Ambil data dari category_id 1 (Tour Packages) dan 2 (Product)
-        $posts = Articles::with('category')->whereIn('category_id', [1, 2])->paginate(10);
+        $query = Articles::with('category')->whereIn('category_id', [1, 2]);
     
-        return view('product-tour', ['posts' => $posts]);
-    }    
+        // Filter pencarian berdasarkan judul
+        if ($request->filled('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+    
+        // Filter berdasarkan kategori (product/tour)
+        if ($request->filled('category')) {
+            if ($request->category == 'product') {
+                $query->where('category_id', 1); // Asumsikan ID 2 adalah Product
+            } elseif ($request->category == 'tour') {
+                $query->where('category_id', 2); // Asumsikan ID 1 adalah Tour
+            }
+        }
+    
+        // Sortir berdasarkan harga
+        if ($request->sort == 'asc') {
+            $query->orderBy('price', 'asc');
+        } elseif ($request->sort == 'desc') {
+            $query->orderBy('price', 'desc');
+        } else {
+            $query->latest(); // default: berdasarkan waktu
+        }
+    
+        // Paginate hasil dan pertahankan query string
+        $posts = $query->paginate(9)->withQueryString();
+    
+        return view('product-tour', compact('posts'));
+    }      
     
     public function newsAndBlog()
     {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductAndTourController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,8 @@ Route::get('/researchdedication', 'WelcomeController@researchdedication')->name(
 Route::get('/post/{id}', 'WelcomeController@post')->name('post');
 Route::get('/product-tour', [WelcomeController::class, 'productTour'])->name('product.tour');
 Route::get('/news-and-blogs', [WelcomeController::class, 'newsAndBlog']);
-
+Route::get('/admin/change-password', [App\Http\Controllers\HomeController::class, 'changePassword'])->name('admin.change-password')->middleware('auth');
+Route::post('/admin/change-password', [App\Http\Controllers\HomeController::class, 'updatePassword'])->middleware('auth');
 // Route::get('/productandtour', [WelcomeController::class, 'productAndTourForGuest'])->name('productandtour');
 // Route::get('/productandtour', [ProductAndTourController::class, 'index'])->name('productandtour.index');
 Route::get('/newsandblog', function () {

@@ -33,7 +33,7 @@
                     <hr class="my-4">
                     <div class="description-product">
                         <h2 style="color: #5F6F52; text-decoration: underline; font-size: 32px;">Description</h2>
-                        <p>{!! $post->description !!}</p>
+                        <p style="text-align: justify;">{!! $post->description !!}</p>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
         {{-- Content --}}
         <div class="news-content mb-4 px-2 px-md-5">
-            <div class="content-frame fs-5" style="line-height: 1.8;">
+            <div class="content-frame fs-5" style="line-height: 1.8; text-align: justify;">
                 {!! $post->description !!}
             </div>
         </div>

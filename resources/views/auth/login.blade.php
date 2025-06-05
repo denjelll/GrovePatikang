@@ -88,6 +88,21 @@
 <div class="login-page">
     <div class="login-box">
         <h1>Login</h1>
+        @if (session('error'))
+        <div class="alert alert-danger" style="border-radius: 10px; background-color: #ff4d4d; padding: 10px; color: white; margin-bottom: 20px;">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger" style="border-radius: 10px; background-color: #ff4d4d; padding: 10px; color: white; margin-bottom: 20px;">
+            <ul style="margin: 0; padding-left: 20px; text-align: left;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

@@ -25,7 +25,6 @@
                 <thead class="thead-light">
                     <tr>
                         <th>Title</th>
-                        <th>Tags</th>
                         <th>Category</th>
                         <th>Image</th>
                         <th class="text-center" style="width: 140px;">Action</th>
@@ -35,7 +34,6 @@
                     @foreach ($articles as $article)
                         <tr>
                             <td>{{ $article->title }}</td>
-                            <td>{{ $article->tags }}</td>
                             <td>{{ $article->category->name ?? 'Tidak ada kategori' }}</td>
                             <td>
                                 <img src="{{ asset('assets/images/' . $article->image) }}" 
