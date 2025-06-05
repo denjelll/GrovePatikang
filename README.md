@@ -149,52 +149,50 @@ We welcome contributions from the community! Follow these steps:
 
 ---
 ## 📷 **Screenshot**
-### Home Page (Non-Login)
-![alt text](imagereadme/image.png)
+### GUEST
+### Home Page
+![alt text](imagereadme/image1.png)
 ![alt text](imagereadme/image2.png)
 ![alt text](imagereadme/image3.png)
 ![alt text](imagereadme/image4.png)
 
-### About US (Non-Login)
+### Product and Tour
 ![alt text](imagereadme/image5.png)
 ![alt text](imagereadme/image6.png)
 
-### Contact US (Non-Login)
-![alt text](imagereadme/image7.png)
-
-### Product and Tour
-![alt text](imagereadme/image10.png)
-![alt text](imagereadme/image8.png)
-![alt text](imagereadme/image9.png)
-
 ### News and Blog 
-![alt text](imagereadme/image11.png)
-![alt text](imagereadme/image12.png)
-![alt text](imagereadme/image13.png)
+![alt text](imagereadme/image7.png)
+![alt text](imagereadme/image8.png)
 
 ### CSR
-![alt text](imagereadme/image14.png)
+![alt text](imagereadme/image9.png)
 
 ### Research and Dedication
-![alt text](imagereadme/image15.png)
+![alt text](imagereadme/image10.png)
+
+### About Us
+![alt text](imagereadme/image11.png)
+![alt text](imagereadme/image12.png)
+
+### Contact Us
+![alt text](imagereadme/image13.png)
 
 ### Login Page
-![alt text](imagereadme/image16.png)
-
-### Sign Up
-![alt text](imagereadme/image17.png)
+![alt text](imagereadme/image14.png)
 ---
 ## 🌟 **Special Thanks**
 We extend our gratitude to the following contributors and partners:
-- **Project Leader**: 
-- **Public Relations**: 
-- **Event Coordinators**: 
-- **Visuals**: 
-- **Social Media**: 
-- **Developers**:
+- **Supervisor**: Maria Advenita Gita Elmada
+- **Project Leader**: Carlencia Avelisca Chandra
+- **Secretary**: Daphni Clarita Candra
+- **Treasurer**: Angga Surya Pratama
+- **Event Coordinators**: Kezia Elia, Theresa Serena
+- **Visuals**: Davina Nadya Adi Juwono
+- **Social Media**: Carolyne Kyneisha
+- **Accomodation**: Alfonso Komala, Jonathan Edricko Hartono
+- **Website Coordinators**: Michelle Carini Saputra, Sheena Tjhang
+- **Developer**:
   - Fullstack: Benediktus Denzel Galgani Lumenon
-- **Videography**: 
-
 ---
 
 ## 📜**License**
