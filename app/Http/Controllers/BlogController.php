@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $articles = Articles::with('category')->whereIn('category_id', Categories::whereIn('name', ['blog', 'news'])->pluck('id'))->get();
+        $article = Articles::with('category')->whereIn('category_id', Categories::whereIn('name', ['blog', 'news'])->pluck('id'))->get();
         return view('auth.admin.blog', compact('articles'));
     }
 
@@ -45,7 +45,7 @@ class BlogController extends Controller
 
     public function edit($id)
     {
-        $articles = Articles::findOrFail($id);
+        $article = Articles::findOrFail($id);
         $categories = Categories::whereIn('name', ['blog', 'news'])->get();
         return view('auth.admin.editblog', compact('article', 'categories'));
     }
