@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $article = Articles::with('category')->whereIn('category_id', Categories::whereIn('name', ['blog', 'news'])->pluck('id'))->get();
+        $articles = Articles::with('category')->whereIn('category_id', Categories::whereIn('name', ['blog', 'news'])->pluck('id'))->get();
         return view('auth.admin.blog', compact('articles'));
     }
 
@@ -60,7 +60,7 @@ class BlogController extends Controller
             $article->image = $imageName;
         }
 
-        $articles->update([
+        $article->update([
             'title' => $request->title,
             'tags' => $request->tags,
             'category_id' => $request->category_id,
