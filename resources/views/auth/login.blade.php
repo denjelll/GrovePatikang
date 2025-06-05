@@ -1,113 +1,134 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 
 <style>
     body {
-        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
     }
 
-    .card {
-        margin-top: 100px;
-        border-radius: 16px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        border: none;
+    .login-page {
+        background-image: url("{{ asset('assets/images/image1.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
     }
 
-    .card-header {
-        background-color: #4a90e2;
+    .login-box {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 25px;
+        padding: 40px 30px;
+        max-width: 400px;
+        width: 100%;
         color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
         text-align: center;
     }
 
-    .btn-primary {
-        background-color: #4a90e2;
-        border-color: #4a90e2;
-        transition: background-color 0.3s;
+    .login-box h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
     }
 
-    .btn-primary:hover {
-        background-color: #357ab8;
-        border-color: #357ab8;
-    }
-
-    .form-check-label {
-        font-size: 0.9rem;
+    .form-group {
+        position: relative;
+        margin-bottom: 20px;
     }
 
     .form-control {
-        border-radius: 8px;
+        border-radius: 50px;
+        padding-left: 45px;
+        height: 45px;
     }
 
-    .btn-link {
+    .form-icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #b66700;
+    }
+
+    .btn-login {
+        background-color: #c7641c;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 30px;
+        font-weight: bold;
+        color: white;
+        width: 100%;
+        transition: 0.3s ease;
+    }
+
+    .btn-login:hover {
+        background-color: #a05217;
+    }
+
+    .forgot-password {
+        margin-top: 15px;
+        display: block;
+        color: #ffffff;
         font-size: 0.9rem;
+    }
+
+    .forgot-password:hover {
+        text-decoration: underline;
     }
 </style>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">{{ __('Admin Login') }}</div>
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-                <div class="card-body p-4">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <!-- Email -->
-                        <div class="form-group">
-                            <label for="email">{{ __('E-Mail Address') }}</label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                   name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                            @error('email')
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <!-- Password -->
-                        <div class="form-group mt-3">
-                            <label for="password">{{ __('Password') }}</label>
-                            <input id="password" type="password"
-                                   class="form-control @error('password') is-invalid @enderror"
-                                   name="password" required autocomplete="current-password">
-                            @error('password')
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <!-- Remember Me -->
-                        <div class="form-check mt-3">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                   {{ old('remember') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div>
-
-                        <!-- Submit -->
-                        <div class="form-group mt-4 d-flex justify-content-between align-items-center">
-                            <button type="submit" class="btn btn-primary px-4">
-                                {{ __('Login') }}
-                            </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
-                        </div>
-                    </form>
-                </div>
-            </div>
+<div class="login-page">
+    <div class="login-box">
+        <h1>Login</h1>
+        @if (session('error'))
+        <div class="alert alert-danger" style="border-radius: 10px; background-color: #ff4d4d; padding: 10px; color: white; margin-bottom: 20px;">
+            {{ session('error') }}
         </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger" style="border-radius: 10px; background-color: #ff4d4d; padding: 10px; color: white; margin-bottom: 20px;">
+            <ul style="margin: 0; padding-left: 20px; text-align: left;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <!-- Email -->
+            <div class="form-group">
+                <i class="fas fa-envelope form-icon"></i>
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <i class="fas fa-lock form-icon"></i>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-login">LOGIN</button>
+
+            <!-- Forgot Password -->
+            @if (Route::has('password.request'))
+                <a class="forgot-password" href="{{ route('password.request') }}">
+                    {{ __('Forgot Your Password?') }}
+                </a>
+            @endif
+        </form>
     </div>
 </div>
+
 @endsection

@@ -20,8 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('image')->nullable();
-            $table->string('lowprice')->nullable();
-            $table->string('highprice')->nullable();
+            $table->string('price')->nullable();
             $table->string('ukuran')->nullable();
             $table->text('penjelasan')->nullable();
             $table->string('tags')->nullable();
