@@ -116,12 +116,7 @@ The project follows the Model-View-Controller (MVC) architecture:
 ## 👤 **User Roles and Access**
 
 ### **Admin**
-- Manage users, content, and categories.
-- View analytics and visitor statistics.
-
-### **Member**
-- Create and manage posts.
-- Edit personal profiles.
+- Manage content.
 
 ### **Guest**
 - Browse available content and learn about the program.
@@ -153,7 +148,7 @@ We welcome contributions from the community! Follow these steps:
 - Multi-language Support (Bahasa Indonesia & English)
 
 ---
-## 📷 **Screen Shot**
+## 📷 **Screenshot**
 ### Home Page (Non-Login)
 ![alt text](imagereadme/image.png)
 ![alt text](imagereadme/image2.png)
