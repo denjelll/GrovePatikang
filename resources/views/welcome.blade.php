@@ -279,7 +279,8 @@
       /* Collaboration Section */
       .collaboration-section {
         background: url("/assets/images/image1.jpg")no-repeat center center/cover;
-        height: 25vh;
+        height: auto;
+        min-height: 25vh;
         /* Full screen height */
         display: flex;
         align-items: center;
@@ -287,23 +288,23 @@
         position: relative;
       }
 
-      .collaboration-overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Semi-transparent black overlay */
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       .collaboration-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
         color: white;
         text-transform: uppercase;
         margin: 0;
-        wordwrap:break;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .collaboration-title {
+          font-size: 1.8rem;
+        }
       }
 
       /* Partners Section */
@@ -503,10 +504,16 @@
     }
 
     .procedure-box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .procedure-box h2 {
