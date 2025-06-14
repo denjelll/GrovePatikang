@@ -1,4 +1,4 @@
-# UMNGrove - Lembur Mangrove Patikang Website V.1.0
+# UMNGrove - Lembur Mangrove Patikang Website V.2.0
 
 ### 🌿 **Empowering Communities Through Mangrove Conservation**
 
@@ -190,6 +190,7 @@ We extend our gratitude to the following contributors and partners:
 - **Website Coordinators**: Michelle Carini Saputra, Sheena Tjhang
 - **Developer**:
   - Fullstack: Benediktus Denzel Galgani Lumenon
+  - UI/UX Designer: Benediktus Denzel Galgani Lumenon
 ---
 
 ## 📜**License**
